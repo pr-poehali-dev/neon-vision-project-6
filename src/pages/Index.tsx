@@ -109,9 +109,11 @@ export default function Index() {
           <a href="/" style={{ color: "var(--secondary)", fontWeight: 800 }}>📍 Якутск</a>
           <a href="/moscow" style={{ color: "var(--primary)", fontWeight: 800 }}>📍 Москва</a>
         </nav>
-        <a href="/" className="btn-cta" style={{ background: "var(--secondary)", color: "white" }}>📍 Якутск</a>
-        <a href="/moscow" className="btn-cta" style={{ background: "var(--primary)", color: "white" }}>📍 Москва</a>
-        <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta">Записаться</a>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <a href="/" className="btn-cta" style={{ background: "var(--secondary)", color: "white", fontSize: 11, padding: "8px 12px" }}>📍 Якутск</a>
+          <a href="/moscow" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 11, padding: "8px 12px" }}>📍 Москва</a>
+          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ fontSize: 11, padding: "8px 12px" }}>Записаться</a>
+        </div>
       </header>
 
       <main>
