@@ -214,8 +214,8 @@ nav a:hover {
 
 .hero-title {
   font-family: "Unbounded", sans-serif;
-  font-size: 48px;
-  line-height: 0.9;
+  font-size: 32px;
+  line-height: 1;
   font-weight: 800;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -223,14 +223,14 @@ nav a:hover {
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 70px;
+    font-size: 48px;
     margin-bottom: 30px;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 90px;
+    font-size: 62px;
   }
 }
 
