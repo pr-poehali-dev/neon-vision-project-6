@@ -98,7 +98,7 @@ export default function Index() {
       <div className="grain-overlay" />
 
       <header className="header">
-        <div className="logo">ОЧКИ*МАСТЕР</div>
+        <div className="logo">ОЧКИ*ПЛЮС</div>
         <nav>
           <a href="#">Услуги</a>
           <a href="#">О нас</a>
@@ -316,7 +316,7 @@ export default function Index() {
 
       <footer>
         <div>
-          <div className="footer-logo">ОЧКИ*МАСТЕР</div>
+          <div className="footer-logo">ОЧКИ*ПЛЮС</div>
           <p style={{ color: "#666", lineHeight: 1.6 }}>
             Срочный ремонт и изготовление очков в Якутске. Возвращаем чёткость взгляда с заботой и гарантией.
           </p>
@@ -380,7 +380,7 @@ export default function Index() {
           </ul>
         </div>
         <div className="footer-bottom">
-          <span>2025 ОЧКИ МАСТЕР</span>
+          <span>2025 ОЧКИ ПЛЮС</span>
           <span>г. Якутск, ул. Орджоникидзе, 20</span>
           <span>РЕМОНТ ЗА ЧАС</span>
         </div>
