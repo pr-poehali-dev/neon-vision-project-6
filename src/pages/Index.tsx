@@ -98,9 +98,7 @@ export default function Index() {
       <div className="grain-overlay" />
 
       <header className="header">
-        <div className="logo">
-          <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/f36cff9e-62bb-41f7-99d3-c166a3f83b88.png" alt="Очки Плюс" style={{ height: 44, objectFit: "contain" }} />
-        </div>
+        <div className="logo">ОЧКИ*ПЛЮС</div>
         <nav>
           <a href="#">Услуги</a>
           <a href="#">О нас</a>
