@@ -106,6 +106,7 @@ export default function Index() {
           <a href="#">Контакты</a>
           <a href="/moscow" style={{ color: "var(--primary)", fontWeight: 800 }}>📍 Москва</a>
         </nav>
+        <a href="/moscow" className="btn-cta" style={{ background: "var(--secondary)", color: "white" }}>📍 Москва</a>
         <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta">Записаться</a>
       </header>
 
