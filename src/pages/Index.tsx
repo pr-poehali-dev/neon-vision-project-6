@@ -108,9 +108,9 @@ export default function Index() {
           <a href="/moscow" style={{ color: "var(--primary)", fontWeight: 800 }}>📍 Москва</a>
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <a href="/" className="btn-cta" style={{ background: "var(--secondary)", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 80, textAlign: "center", display: "inline-block" }}>📍 Якутск</a>
-          <a href="/moscow" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 80, textAlign: "center", display: "inline-block" }}>📍 Москва</a>
-          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 100, textAlign: "center", display: "inline-block" }}>Записаться</a>
+          <a href="/" className="btn-cta" style={{ background: "#0369a1", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 80, textAlign: "center", display: "inline-block" }}>📍 Якутск</a>
+          <a href="/moscow" className="btn-cta" style={{ background: "#0ea5e9", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 80, textAlign: "center", display: "inline-block" }}>📍 Москва</a>
+          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "#075985", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 100, textAlign: "center", display: "inline-block" }}>Записаться</a>
         </div>
       </header>
 
@@ -127,10 +127,10 @@ export default function Index() {
               вашем зрении.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white" }}>
+              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "#075985", color: "white" }}>
                 Записаться на ремонт
               </a>
-              <button className="btn-cta" style={{ background: "white" }}>
+              <button className="btn-cta" style={{ background: "white", color: "#0c1a2e" }}>
                 Услуги и цены
               </button>
             </div>

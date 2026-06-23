@@ -6,12 +6,12 @@
 
 @layer base {
   :root {
-    /* Vinyl Diner theme variables */
-    --primary: #ff4d00;
-    --secondary: #2d31fa;
-    --bg: #fdf9f0;
-    --dark: #1a1a1a;
-    --accent: #bff000;
+    /* Очки Плюс theme variables */
+    --primary: #0ea5e9;
+    --secondary: #0369a1;
+    --bg: #e0f2fe;
+    --dark: #0c1a2e;
+    --accent: #38bdf8;
     --border: 3px solid #1a1a1a;
     --shadow: 8px 8px 0px #1a1a1a;
 
