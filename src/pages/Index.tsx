@@ -123,8 +123,7 @@ export default function Index() {
               ОЧКОВ <span>ЗА ЧАС</span>
             </h1>
             <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed text-[#555]">
-              Мастерская в Якутске. Чиним оправы, меняем линзы и собираем очки на заказ. Быстро, надёжно и с заботой о
-              вашем зрении.
+              Более 10 лет изготавливаем и ремонтируем очки в Якутске. Очки по рецепту, большой выбор линз, гарантия на каждую работу. Мы ценим ваше время.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
               <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "#075985", color: "white" }}>
