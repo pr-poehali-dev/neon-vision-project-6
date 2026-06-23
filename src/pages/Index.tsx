@@ -251,6 +251,22 @@ export default function Index() {
           </div>
         </section>
 
+        <section className="section-padding" style={{ background: "white" }}>
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 32 }}>ДОПОЛНИТЕЛЬНО</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20, maxWidth: 800, margin: "0 auto" }}>
+            <div style={{ border: "3px solid var(--dark)", borderRadius: 12, padding: 28, boxShadow: "5px 5px 0 var(--dark)", background: "var(--bg)" }}>
+              <div style={{ fontSize: 40, marginBottom: 12 }}>🏢</div>
+              <h3 style={{ fontWeight: 900, fontSize: 18, textTransform: "uppercase", marginBottom: 10 }}>Работаем с юр. лицами</h3>
+              <p style={{ color: "#555", fontSize: 14, lineHeight: 1.6 }}>Заключаем договоры, выставляем счета и предоставляем все необходимые документы для бухгалтерии.</p>
+            </div>
+            <div style={{ border: "3px solid var(--dark)", borderRadius: 12, padding: 28, boxShadow: "5px 5px 0 var(--dark)", background: "var(--bg)" }}>
+              <div style={{ fontSize: 40, marginBottom: 12 }}>💳</div>
+              <h3 style={{ fontWeight: 900, fontSize: 18, textTransform: "uppercase", marginBottom: 10 }}>Любая форма оплаты</h3>
+              <p style={{ color: "#555", fontSize: 14, lineHeight: 1.6 }}>Принимаем наличные, карты, безналичный расчёт и оплату по счёту для организаций.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="retro-vibe">
           <div>
             <h2 className="vibe-title">МАСТЕРА СВОЕГО ДЕЛА.</h2>
