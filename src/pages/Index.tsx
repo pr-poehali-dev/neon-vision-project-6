@@ -288,13 +288,13 @@ export default function Index() {
           <div className="social-grid">
             <div className="social-item">
               <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/6d91e332-6f3b-4c71-8d28-114951e89f0d.jpg"
+                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/dd35a0e4-d54b-417e-a21a-d8948f6f98b8.png"
                 alt="Работа 1"
               />
             </div>
             <div className="social-item">
               <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/b42d6345-2b97-4053-842b-45b0f4721df9.jpg"
+                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/16503f70-e163-4a92-952c-7ef8c8981b78.png"
                 alt="Работа 2"
               />
             </div>
