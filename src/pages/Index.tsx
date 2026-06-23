@@ -250,7 +250,16 @@ export default function Index() {
                 Тел: +7 914 116-00-07
               </a>
             </li>
-            <li>ул. Орджоникидзе, 20, каб. 207</li>
+            <li>
+              <a
+                href="https://yandex.ru/maps/?text=Якутск+ул+Орджоникидзе+20"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                ул. Орджоникидзе, 20, каб. 207
+              </a>
+            </li>
             <li>г. Якутск</li>
           </ul>
         </div>
