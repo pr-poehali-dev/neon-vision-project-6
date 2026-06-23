@@ -242,10 +242,12 @@ nav a:hover {
 }
 
 .hero-img {
-  background: var(--bg);
+  background: url("https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/a10b4a88-b319-4e61-8fda-d20c0f22eb2e.png")
+    center top / cover;
   position: relative;
-  min-height: 300px;
-  display: none;
+  min-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
