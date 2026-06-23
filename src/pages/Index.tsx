@@ -196,6 +196,26 @@ export default function Index() {
             </div>
           </div>
         </section>
+
+        <section className="section-padding" style={{ paddingTop: "0" }}>
+          <h2 className="section-title" style={{ marginBottom: "24px", textAlign: "center" }}>
+            КАК НАС НАЙТИ
+          </h2>
+          <p style={{ textAlign: "center", marginBottom: "32px", color: "#666", fontSize: "16px" }}>
+            г. Якутск, ул. Орджоникидзе, 20, каб. 207
+          </p>
+          <div style={{ borderRadius: "12px", overflow: "hidden", border: "3px solid var(--dark)", boxShadow: "6px 6px 0 var(--dark)" }}>
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?text=Якутск+ул+Орджоникидзе+20&z=16&l=map"
+              width="100%"
+              height="420"
+              frameBorder="0"
+              allowFullScreen
+              style={{ display: "block" }}
+              title="Карта мастерской"
+            />
+          </div>
+        </section>
       </main>
 
       <footer>
