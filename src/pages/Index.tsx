@@ -110,9 +110,9 @@ export default function Index() {
           <a href="/moscow" style={{ color: "var(--primary)", fontWeight: 800 }}>📍 Москва</a>
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <a href="/" className="btn-cta" style={{ background: "var(--secondary)", color: "white", fontSize: 11, padding: "8px 12px" }}>📍 Якутск</a>
-          <a href="/moscow" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 11, padding: "8px 12px" }}>📍 Москва</a>
-          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ fontSize: 11, padding: "8px 12px" }}>Записаться</a>
+          <a href="/" className="btn-cta" style={{ background: "var(--secondary)", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 80, textAlign: "center", display: "inline-block" }}>📍 Якутск</a>
+          <a href="/moscow" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 80, textAlign: "center", display: "inline-block" }}>📍 Москва</a>
+          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 100, textAlign: "center", display: "inline-block" }}>Записаться</a>
         </div>
       </header>
 
