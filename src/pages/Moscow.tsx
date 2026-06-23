@@ -29,12 +29,10 @@ export default function Moscow() {
           {/* Декоративные круги */}
           <div style={{ position: "absolute", top: "-100px", right: "-100px", width: 400, height: 400, borderRadius: "50%", background: "rgba(255,255,255,0.07)", pointerEvents: "none" }} />
           <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: 300, height: 300, borderRadius: "50%", background: "rgba(255,255,255,0.05)", pointerEvents: "none" }} />
-          {/* Большой логотип на фоне */}
-          <img
-            src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/f36cff9e-62bb-41f7-99d3-c166a3f83b88.png"
-            alt=""
-            style={{ position: "absolute", width: "90%", maxWidth: 700, opacity: 0.12, filter: "brightness(0) invert(1)", mixBlendMode: "screen", pointerEvents: "none", userSelect: "none", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
-          />
+          {/* Декоративный текст на фоне */}
+          <div style={{ position: "absolute", fontSize: "clamp(80px, 20vw, 180px)", fontWeight: 900, color: "rgba(255,255,255,0.05)", pointerEvents: "none", userSelect: "none", left: "50%", top: "50%", transform: "translate(-50%, -50%)", whiteSpace: "nowrap", fontFamily: "'Unbounded', sans-serif", letterSpacing: -4 }}>
+            ОЧКИ ПЛЮС
+          </div>
           <div style={{ maxWidth: 640, width: "100%", textAlign: "center" }}>
 
             {/* Логотип */}
