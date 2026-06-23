@@ -33,7 +33,7 @@ export default function Moscow() {
           <img
             src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/f36cff9e-62bb-41f7-99d3-c166a3f83b88.png"
             alt=""
-            style={{ position: "absolute", width: "90%", maxWidth: 700, opacity: 0.07, filter: "brightness(0) invert(1)", pointerEvents: "none", userSelect: "none", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
+            style={{ position: "absolute", width: "90%", maxWidth: 700, opacity: 0.12, filter: "brightness(0) invert(1)", mixBlendMode: "screen", pointerEvents: "none", userSelect: "none", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
           />
           <div style={{ maxWidth: 640, width: "100%", textAlign: "center" }}>
 
