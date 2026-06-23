@@ -1,3 +1,97 @@
+import { useState } from "react";
+
+const SEND_URL = "https://functions.poehali.dev/628efe3f-9fea-498f-8213-c50b009e9e11";
+
+function ContactForm() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [comment, setComment] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch(SEND_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, comment }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setName(""); setPhone(""); setComment("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <section className="section-padding" style={{ background: "var(--cream)" }}>
+      <div style={{ maxWidth: 560, margin: "0 auto" }}>
+        <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>ОСТАВИТЬ ЗАЯВКУ</h2>
+        <p style={{ textAlign: "center", color: "#666", marginBottom: 32 }}>
+          Опишите проблему — мы свяжемся с вами в Telegram или по телефону
+        </p>
+        {status === "success" ? (
+          <div style={{ textAlign: "center", padding: "40px 20px", border: "3px solid var(--dark)", borderRadius: 12, background: "white", boxShadow: "5px 5px 0 var(--dark)" }}>
+            <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
+            <h3 style={{ fontWeight: 800, fontSize: 22, marginBottom: 8 }}>Заявка отправлена!</h3>
+            <p style={{ color: "#666" }}>Мы свяжемся с вами в ближайшее время.</p>
+            <button className="btn-cta" style={{ marginTop: 24, background: "var(--primary)", color: "white" }} onClick={() => setStatus("idle")}>Отправить ещё</button>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16, background: "white", padding: 32, border: "3px solid var(--dark)", borderRadius: 12, boxShadow: "5px 5px 0 var(--dark)" }}>
+            <div>
+              <label style={{ fontWeight: 700, fontSize: 13, textTransform: "uppercase", letterSpacing: 1, display: "block", marginBottom: 6 }}>Ваше имя *</label>
+              <input
+                type="text"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                placeholder="Иван"
+                required
+                style={{ width: "100%", padding: "12px 16px", border: "2px solid var(--dark)", borderRadius: 8, fontSize: 16, fontFamily: "inherit", outline: "none", boxSizing: "border-box" }}
+              />
+            </div>
+            <div>
+              <label style={{ fontWeight: 700, fontSize: 13, textTransform: "uppercase", letterSpacing: 1, display: "block", marginBottom: 6 }}>Телефон *</label>
+              <input
+                type="tel"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                placeholder="+7 914 000-00-00"
+                required
+                style={{ width: "100%", padding: "12px 16px", border: "2px solid var(--dark)", borderRadius: 8, fontSize: 16, fontFamily: "inherit", outline: "none", boxSizing: "border-box" }}
+              />
+            </div>
+            <div>
+              <label style={{ fontWeight: 700, fontSize: 13, textTransform: "uppercase", letterSpacing: 1, display: "block", marginBottom: 6 }}>Что случилось с очками?</label>
+              <textarea
+                value={comment}
+                onChange={e => setComment(e.target.value)}
+                placeholder="Сломалась дужка, нужна замена линз..."
+                rows={3}
+                style={{ width: "100%", padding: "12px 16px", border: "2px solid var(--dark)", borderRadius: 8, fontSize: 16, fontFamily: "inherit", outline: "none", resize: "vertical", boxSizing: "border-box" }}
+              />
+            </div>
+            {status === "error" && <p style={{ color: "red", fontSize: 14 }}>Ошибка отправки. Попробуйте ещё раз или напишите нам в Telegram.</p>}
+            <button
+              type="submit"
+              className="btn-cta"
+              disabled={status === "loading"}
+              style={{ background: "var(--primary)", color: "white", width: "100%", opacity: status === "loading" ? 0.7 : 1 }}
+            >
+              {status === "loading" ? "Отправляю..." : "Отправить заявку"}
+            </button>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+}
+
 export default function Index() {
   return (
     <>
@@ -196,6 +290,8 @@ export default function Index() {
             </div>
           </div>
         </section>
+
+        <ContactForm />
 
         <section className="section-padding" style={{ paddingTop: "0" }}>
           <h2 className="section-title" style={{ marginBottom: "24px", textAlign: "center" }}>
