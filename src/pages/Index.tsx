@@ -195,7 +195,7 @@ export default function Index() {
                 Точность
               </span>
               <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/2d312fb3-39cf-4aa7-8dc8-27bca5ab95ca.jpg"
+                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/5f1d99da-f588-4d48-9de5-2edcc11beccd.jpg"
                 alt="Замена линз"
               />
               <div className="menu-card-body">
@@ -222,7 +222,7 @@ export default function Index() {
                 Под ключ
               </span>
               <img
-                src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/60e46d97-41ed-4613-8f88-442fa30a06d0.jpg"
                 alt="Очки на заказ"
               />
               <div className="menu-card-body">
