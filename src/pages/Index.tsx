@@ -118,9 +118,9 @@ export default function Index() {
         <section className="hero">
           <div className="hero-content">
             <h1 className="hero-title">
-              СРОЧНЫЙ РЕМОНТ
+              СРОЧНОЕ ИЗГОТОВЛЕНИЕ
               <br />
-              ОЧКОВ <span>ЗА ЧАС</span>
+              И РЕМОНТ ОЧКОВ <span>ЗА ЧАС</span>
             </h1>
             <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed text-[#555]">
               Более 10 лет изготавливаем и ремонтируем очки в Якутске. Очки по рецепту, большой выбор линз, гарантия на каждую работу. Мы ценим ваше время.
