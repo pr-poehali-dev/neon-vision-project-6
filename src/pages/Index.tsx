@@ -98,15 +98,19 @@ export default function Index() {
       <div className="grain-overlay" />
 
       <header className="header">
-        <div className="logo">ОЧКИ*ПЛЮС</div>
+        <div className="logo">
+          <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/f36cff9e-62bb-41f7-99d3-c166a3f83b88.png" alt="Очки Плюс" style={{ height: 44, objectFit: "contain" }} />
+        </div>
         <nav>
           <a href="#">Услуги</a>
           <a href="#">О нас</a>
           <a href="#">Галерея</a>
           <a href="#">Контакты</a>
+          <a href="/" style={{ color: "var(--secondary)", fontWeight: 800 }}>📍 Якутск</a>
           <a href="/moscow" style={{ color: "var(--primary)", fontWeight: 800 }}>📍 Москва</a>
         </nav>
-        <a href="/moscow" className="btn-cta" style={{ background: "var(--secondary)", color: "white" }}>📍 Москва</a>
+        <a href="/" className="btn-cta" style={{ background: "var(--secondary)", color: "white" }}>📍 Якутск</a>
+        <a href="/moscow" className="btn-cta" style={{ background: "var(--primary)", color: "white" }}>📍 Москва</a>
         <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta">Записаться</a>
       </header>
 
