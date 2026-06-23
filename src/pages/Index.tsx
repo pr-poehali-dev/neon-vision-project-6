@@ -11,7 +11,7 @@ export default function Index() {
           <a href="#">Галерея</a>
           <a href="#">Контакты</a>
         </nav>
-        <button className="btn-cta">Записаться</button>
+        <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta">Записаться</a>
       </header>
 
       <main>
@@ -27,9 +27,9 @@ export default function Index() {
               вашем зрении.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-              <button className="btn-cta" style={{ background: "var(--primary)", color: "white" }}>
+              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white" }}>
                 Записаться на ремонт
-              </button>
+              </a>
               <button className="btn-cta" style={{ background: "white" }}>
                 Услуги и цены
               </button>
@@ -231,17 +231,25 @@ export default function Index() {
           </ul>
         </div>
         <div className="footer-links">
-          <h4>Часы работы</h4>
+          <h4>Контакты</h4>
           <ul>
-            <li>Пн-Пт: 10:00 - 19:00</li>
-            <li>Сб: 11:00 - 17:00</li>
-            <li>Вс: Выходной</li>
+            <li>
+              <a href="https://t.me/+79141160007" style={{ color: "inherit", textDecoration: "none" }}>
+                Telegram: @+79141160007
+              </a>
+            </li>
+            <li>
+              <a href="tel:+79141160007" style={{ color: "inherit", textDecoration: "none" }}>
+                Тел: +7 914 116-00-07
+              </a>
+            </li>
+            <li>ул. Орджоникидзе, 20, каб. 207</li>
             <li>г. Якутск</li>
           </ul>
         </div>
         <div className="footer-bottom">
           <span>2025 ОЧКИ МАСТЕР</span>
-          <span>ЯКУТСК</span>
+          <span>г. Якутск, ул. Орджоникидзе, 20</span>
           <span>РЕМОНТ ЗА ЧАС</span>
         </div>
       </footer>
