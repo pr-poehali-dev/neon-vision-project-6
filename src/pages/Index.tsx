@@ -668,33 +668,6 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ОТЗЫВЫ */}
-        <section className="section-padding">
-          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 8 }}>Отзывы клиентов</h2>
-          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Более 500 довольных клиентов в Якутске</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, maxWidth: 1100, margin: "0 auto" }}>
-            {[
-              { name: "Анна М.", text: "Сделали очки за 40 минут, качество отличное. Очень довольна результатом!", stars: 5, date: "2 дня назад" },
-              { name: "Дмитрий К.", text: "Сломал оправу утром — к обеду уже ходил в починенных очках. Работают быстро и аккуратно.", stars: 5, date: "1 неделю назад" },
-              { name: "Светлана П.", text: "Заменили линзы по рецепту, подобрали антиблик. Мастера объяснили всё подробно. Рекомендую!", stars: 5, date: "2 недели назад" },
-              { name: "Игорь В.", text: "Обращаюсь уже третий раз. Всегда быстро, всегда качественно. Цены адекватные.", stars: 5, date: "3 недели назад" },
-              { name: "Мария Н.", text: "Ребёнку сделали детские линзы против миопии. Специалисты грамотные, всё объяснили.", stars: 5, date: "1 месяц назад" },
-              { name: "Алексей С.", text: "Паяли металлическую оправу — сделали идеально. Даже следа не осталось. Спасибо мастерам!", stars: 5, date: "1 месяц назад" },
-            ].map((r, i) => (
-              <div key={i} style={{ background: "white", borderRadius: 18, padding: "24px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid rgba(0,0,0,0.06)", display: "flex", flexDirection: "column", gap: 12 }}>
-                <div style={{ display: "flex", gap: 2 }}>
-                  {"⭐".repeat(r.stars)}
-                </div>
-                <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--dark)", margin: 0 }}>«{r.text}»</p>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
-                  <span style={{ fontWeight: 600, fontSize: 13, color: "var(--dark)" }}>{r.name}</span>
-                  <span style={{ fontSize: 12, color: "var(--gray)" }}>{r.date}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* НАША МАСТЕРСКАЯ */}
         <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Наша мастерская</h2>
@@ -719,6 +692,31 @@ export default function Index() {
         </section>
 
         <ContactForm />
+
+        {/* ОТЗЫВЫ */}
+        <section className="section-padding">
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 8 }}>Отзывы клиентов</h2>
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Более 500 довольных клиентов в Якутске</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, maxWidth: 1100, margin: "0 auto" }}>
+            {[
+              { name: "Анна М.", text: "Сделали очки за 40 минут, качество отличное. Очень довольна результатом!", stars: 5, date: "2 дня назад" },
+              { name: "Дмитрий К.", text: "Сломал оправу утром — к обеду уже ходил в починенных очках. Работают быстро и аккуратно.", stars: 5, date: "1 неделю назад" },
+              { name: "Светлана П.", text: "Заменили линзы по рецепту, подобрали антиблик. Мастера объяснили всё подробно. Рекомендую!", stars: 5, date: "2 недели назад" },
+              { name: "Игорь В.", text: "Обращаюсь уже третий раз. Всегда быстро, всегда качественно. Цены адекватные.", stars: 5, date: "3 недели назад" },
+              { name: "Мария Н.", text: "Ребёнку сделали детские линзы против миопии. Специалисты грамотные, всё объяснили.", stars: 5, date: "1 месяц назад" },
+              { name: "Алексей С.", text: "Паяли металлическую оправу — сделали идеально. Даже следа не осталось. Спасибо мастерам!", stars: 5, date: "1 месяц назад" },
+            ].map((r, i) => (
+              <div key={i} style={{ background: "white", borderRadius: 18, padding: "24px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid rgba(0,0,0,0.06)", display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ display: "flex", gap: 2 }}>{"⭐".repeat(r.stars)}</div>
+                <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--dark)", margin: 0 }}>«{r.text}»</p>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
+                  <span style={{ fontWeight: 600, fontSize: 13, color: "var(--dark)" }}>{r.name}</span>
+                  <span style={{ fontSize: 12, color: "var(--gray)" }}>{r.date}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="section-padding" style={{ paddingTop: "0" }}>
           <h2 className="section-title" style={{ marginBottom: "12px", textAlign: "center" }}>
