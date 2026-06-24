@@ -288,7 +288,7 @@ export default function Index() {
               и ремонт очков <span>за час</span>
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--gray)", marginBottom: 32, maxWidth: 420, fontWeight: 400 }}>
-              Более 10 лет изготавливаем и ремонтируем очки в Якутске. Очки по рецепту, большой выбор линз, гарантия на каждую работу.
+              Оптическая мастерская в Якутске — срочное изготовление очков по рецепту, замена линз, ремонт оправ любой сложности. Более 10 лет опыта, гарантия на каждую работу.
             </p>
             <div style={{ display: "flex", flexDirection: "row", gap: 12, flexWrap: "wrap" }}>
               <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 15, padding: "12px 24px" }}>
@@ -432,9 +432,9 @@ export default function Index() {
 
         <section id="about" className="retro-vibe">
           <div>
-            <h2 className="vibe-title">Мастерская полного цикла.</h2>
+            <h2 className="vibe-title">Оптическая мастерская полного цикла.</h2>
             <p className="vibe-text">
-              Мы не просто ремонтируем очки — мы создаём комфортное зрение для каждого клиента. Более 10 лет опыта, современное оборудование и гарантия качества на каждую выполненную работу.
+              Мы не просто ремонтируем очки — мы создаём комфортное зрение для каждого клиента в Якутске. Срочное изготовление очков, замена линз, ремонт оправ. Более 10 лет опыта и гарантия качества на каждую работу.
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: "20px 0 28px", display: "flex", flexDirection: "column", gap: 8 }}>
               {[
