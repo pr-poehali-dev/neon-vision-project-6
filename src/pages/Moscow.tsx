@@ -69,7 +69,7 @@ export default function Moscow() {
           <div className="menu-grid">
             <div className="menu-card">
               <span className="menu-tag">Срочно</span>
-              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/d84de801-f02b-47c1-8ceb-184f8320f6ce.jpg" alt="Ремонт оправы" />
+              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/7152e9f6-0c1e-4107-ba7f-41291ec29d23.png" alt="Ремонт оправы" />
               <div className="menu-card-body">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                   <h3 style={{ fontWeight: 600, fontSize: 16, letterSpacing: "-0.3px" }}>Ремонт оправы</h3>
@@ -80,7 +80,7 @@ export default function Moscow() {
             </div>
             <div className="menu-card">
               <span className="menu-tag" style={{ background: "var(--secondary)" }}>Точность</span>
-              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/5f1d99da-f588-4d48-9de5-2edcc11beccd.jpg" alt="Замена линз" />
+              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/294a42a5-2f5a-4720-932e-c545b1a2b7fd.png" alt="Замена линз" />
               <div className="menu-card-body">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                   <h3 style={{ fontWeight: 600, fontSize: 16, letterSpacing: "-0.3px" }}>Замена линз</h3>
@@ -91,7 +91,7 @@ export default function Moscow() {
             </div>
             <div className="menu-card">
               <span className="menu-tag" style={{ background: "var(--accent)", color: "var(--dark)" }}>Под ключ</span>
-              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/60e46d97-41ed-4613-8f88-442fa30a06d0.jpg" alt="Очки на заказ" />
+              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/b3bbbb83-833c-47ce-b566-f3887b12534f.jpg" alt="Очки на заказ" />
               <div className="menu-card-body">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                   <h3 style={{ fontWeight: 600, fontSize: 16, letterSpacing: "-0.3px" }}>Очки на заказ</h3>
