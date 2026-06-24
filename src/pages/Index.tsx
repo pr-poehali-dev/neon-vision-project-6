@@ -30,7 +30,7 @@ function ContactForm() {
   };
 
   return (
-    <section className="section-padding" style={{ background: "var(--bg-section)" }}>
+    <section id="contacts" className="section-padding" style={{ background: "var(--bg-section)" }}>
       <div style={{ maxWidth: 520, margin: "0 auto" }}>
         <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Оставить заявку</h2>
         <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 36, fontSize: 16, lineHeight: 1.6 }}>
@@ -218,10 +218,10 @@ export default function Index() {
       <header className="header">
         <div className="logo">Очки Плюс</div>
         <nav>
-          <a href="#">Услуги</a>
-          <a href="#">О нас</a>
-          <a href="#">Галерея</a>
-          <a href="#">Контакты</a>
+          <a href="#services" onClick={e => { e.preventDefault(); document.getElementById("services")?.scrollIntoView({ behavior: "smooth" }); }}>Услуги</a>
+          <a href="#about" onClick={e => { e.preventDefault(); document.getElementById("about")?.scrollIntoView({ behavior: "smooth" }); }}>О нас</a>
+          <a href="#gallery" onClick={e => { e.preventDefault(); document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" }); }}>Галерея</a>
+          <a href="#contacts" onClick={e => { e.preventDefault(); document.getElementById("contacts")?.scrollIntoView({ behavior: "smooth" }); }}>Контакты</a>
           <a href="/" style={{ color: "var(--primary)" }}>📍 Якутск</a>
           <a href="/moscow" style={{ color: "var(--gray)" }}>📍 Москва</a>
         </nav>
@@ -273,7 +273,7 @@ export default function Index() {
           </div>
         </div>
 
-        <section className="section-padding">
+        <section id="services" className="section-padding">
           <div className="section-header">
             <h2 className="section-title">Наши услуги</h2>
             <a
@@ -382,7 +382,7 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="retro-vibe">
+        <section id="about" className="retro-vibe">
           <div>
             <h2 className="vibe-title">Мастера своего дела.</h2>
             <p className="vibe-text">
@@ -395,7 +395,7 @@ export default function Index() {
           <div className="vibe-img"></div>
         </section>
 
-        <section className="section-padding">
+        <section id="gallery" className="section-padding">
           <h2 className="section-title" style={{ marginBottom: "40px", textAlign: "center" }}>
             Наши работы
           </h2>
