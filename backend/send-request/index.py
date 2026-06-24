@@ -47,10 +47,11 @@ def handler(event: dict, context) -> dict:
     chat_id = os.environ['TELEGRAM_CHAT_ID']
     tg_base = f"https://api.telegram.org/bot{token}"
 
+    phone_clean = ''.join(c for c in phone if c.isdigit() or c == '+')
     text = (
         f"🔔 *Новая заявка с сайта*\n\n"
         f"👤 *Имя:* {name}\n"
-        f"📞 *Телефон:* {phone}"
+        f"📞 *Телефон:* [{phone}](tel:{phone_clean})"
     )
     if comment:
         text += f"\n💬 *Комментарий:* {comment}"
