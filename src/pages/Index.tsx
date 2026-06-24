@@ -320,6 +320,7 @@ export default function Index() {
               { name: "Подбор оправы", price: "Бесплатно", desc: "Поможем выбрать подходящую оправу", tag: null },
               { name: "Регулировка очков", price: "от 200 ₽", desc: "Подгонка по форме лица, натяжка дужек", tag: null },
               { name: "Замена стёкол", price: "от 800 ₽", desc: "Вставка стёкол в готовую оправу", tag: null },
+              { name: "Курьер для юр. лиц", price: "Бесплатно", desc: "Забираем и привозим очки обратно — бесплатно для организаций", tag: "Юр. лица" },
             ].map((item) => (
               <div key={item.name} style={{ borderRadius: 16, padding: "24px 26px", background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)", position: "relative", transition: "box-shadow 0.3s", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
                 {item.tag && (
