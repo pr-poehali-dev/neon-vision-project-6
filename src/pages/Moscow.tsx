@@ -1,150 +1,191 @@
 export default function Moscow() {
   return (
     <>
-      <div className="grain-overlay" />
-
       <header className="header">
-        <div className="logo">
-          <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/f36cff9e-62bb-41f7-99d3-c166a3f83b88.png" alt="Очки Плюс" style={{ height: 44, objectFit: "contain" }} />
-        </div>
+        <div className="logo">Очки Плюс</div>
         <nav>
           <a href="/">Главная</a>
           <a href="#">Услуги</a>
           <a href="#">Контакты</a>
+          <a href="/" style={{ color: "var(--gray)" }}>📍 Якутск</a>
+          <a href="/moscow" style={{ color: "var(--primary)" }}>📍 Москва</a>
         </nav>
-        <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta">Записаться</a>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <a href="/" className="btn-cta" style={{ background: "rgba(0,0,0,0.06)", color: "var(--dark)", fontSize: 12 }}>📍 Якутск</a>
+          <a href="/moscow" className="btn-cta" style={{ background: "rgba(0,113,227,0.12)", color: "var(--primary)", fontSize: 12 }}>📍 Москва</a>
+          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 12 }}>Записаться</a>
+        </div>
       </header>
 
       <main>
-        <section style={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 50%, #7c3aed 100%)",
-          padding: "80px 20px",
-          position: "relative",
-          overflow: "hidden",
-        }}>
-          {/* Декоративные круги */}
-          <div style={{ position: "absolute", top: "-100px", right: "-100px", width: 400, height: 400, borderRadius: "50%", background: "rgba(255,255,255,0.07)", pointerEvents: "none" }} />
-          <div style={{ position: "absolute", bottom: "-80px", left: "-80px", width: 300, height: 300, borderRadius: "50%", background: "rgba(255,255,255,0.05)", pointerEvents: "none" }} />
-          {/* Декоративный текст на фоне */}
-          <div style={{ position: "absolute", fontSize: "clamp(80px, 20vw, 180px)", fontWeight: 900, color: "rgba(255,255,255,0.05)", pointerEvents: "none", userSelect: "none", left: "50%", top: "50%", transform: "translate(-50%, -50%)", whiteSpace: "nowrap", fontFamily: "'Unbounded', sans-serif", letterSpacing: -4 }}>
-            ОЧКИ ПЛЮС
-          </div>
-          <div style={{ maxWidth: 640, width: "100%", textAlign: "center" }}>
-
-            {/* Логотип */}
-            <div style={{ marginBottom: 32 }}>
-              <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/f36cff9e-62bb-41f7-99d3-c166a3f83b88.png"
-                alt="Очки Плюс"
-                style={{ height: 90, objectFit: "contain", filter: "brightness(0) invert(1)" }}
-              />
+        {/* HERO */}
+        <section className="hero">
+          <div className="hero-content">
+            <div style={{ display: "inline-block", background: "rgba(0,113,227,0.1)", color: "var(--primary)", fontSize: 12, fontWeight: 600, padding: "5px 14px", borderRadius: 980, marginBottom: 20, letterSpacing: 0.2 }}>
+              Новый филиал — Москва
             </div>
-
-            <div style={{
-              display: "inline-block",
-              background: "rgba(255,255,255,0.2)",
-              color: "white",
-              fontWeight: 900,
-              fontSize: 13,
-              textTransform: "uppercase",
-              letterSpacing: 3,
-              padding: "8px 20px",
-              border: "2px solid rgba(255,255,255,0.4)",
-              borderRadius: 100,
-              marginBottom: 32,
-              backdropFilter: "blur(10px)",
-            }}>
-              Новый филиал
-            </div>
-
-            <h1 style={{
-              fontFamily: "'Unbounded', sans-serif",
-              fontSize: "clamp(42px, 9vw, 86px)",
-              lineHeight: 1,
-              fontWeight: 900,
-              color: "white",
-              marginBottom: 24,
-              textTransform: "uppercase",
-            }}>
-              СКОРО В<br />
-              <span style={{ color: "#bff000" }}>МОСКВЕ</span>
+            <h1 className="hero-title">
+              Скоро откроемся<br />
+              <span>в Москве</span>
             </h1>
-
-            <p style={{
-              fontSize: 18,
-              color: "rgba(255,255,255,0.8)",
-              lineHeight: 1.6,
-              marginBottom: 48,
-              maxWidth: 480,
-              margin: "0 auto 48px",
-            }}>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--gray)", marginBottom: 32, maxWidth: 420, fontWeight: 400 }}>
               Мастерская «Очки Плюс» открывает филиал в Москве. Тот же уровень качества и скорости — уже скоро в вашем городе.
             </p>
-
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-              gap: 16,
-              marginBottom: 48,
-            }}>
-              {[
-                { icon: "⚡", text: "Ремонт за час" },
-                { icon: "🔬", text: "Замена линз" },
-                { icon: "🛠️", text: "Очки на заказ" },
-              ].map((item) => (
-                <div key={item.text} style={{
-                  background: "rgba(255,255,255,0.15)",
-                  border: "2px solid rgba(255,255,255,0.3)",
-                  borderRadius: 12,
-                  padding: "20px 16px",
-                  backdropFilter: "blur(10px)",
-                  color: "white",
-                }}>
-                  <div style={{ fontSize: 32, marginBottom: 8 }}>{item.icon}</div>
-                  <div style={{ fontWeight: 800, fontSize: 14, textTransform: "uppercase" }}>{item.text}</div>
-                </div>
-              ))}
-            </div>
-
-            <div style={{
-              background: "rgba(255,255,255,0.15)",
-              backdropFilter: "blur(16px)",
-              color: "white",
-              borderRadius: 16,
-              padding: "32px 24px",
-              border: "2px solid rgba(255,255,255,0.3)",
-              marginBottom: 32,
-            }}>
-              <p style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>Хотите узнать первым об открытии?</p>
-              <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, marginBottom: 20 }}>Напишите нам — мы сообщим, как только откроемся</p>
-              <a
-                href="https://t.me/+79141160007"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-cta"
-                style={{ background: "#bff000", color: "#1a1a1a", display: "inline-block" }}
-              >
-                Написать в Telegram
+            <div style={{ display: "flex", flexDirection: "row", gap: 12, flexWrap: "wrap" }}>
+              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 15, padding: "12px 24px" }}>
+                Узнать об открытии
+              </a>
+              <a href="/" className="btn-cta" style={{ background: "rgba(0,0,0,0.07)", color: "var(--dark)", fontSize: 15, padding: "12px 24px" }}>
+                ← Якутск
               </a>
             </div>
+          </div>
+          <div className="hero-img" style={{ background: "linear-gradient(135deg, #0071e3 0%, #0099fa 100%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ textAlign: "center", color: "white" }}>
+              <div style={{ fontSize: 96, marginBottom: 16 }}>🏙️</div>
+              <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: -1 }}>Москва</div>
+              <div style={{ fontSize: 14, opacity: 0.8, marginTop: 8 }}>Открытие — скоро</div>
+            </div>
+            <div className="sticker" style={{ background: "white", color: "var(--primary)" }}>
+              СКОРО<br />ЗДЕСЬ
+            </div>
+          </div>
+        </section>
 
-            <a href="/" style={{
-              color: "rgba(255,255,255,0.7)",
-              fontWeight: 700,
-              fontSize: 14,
-              textTransform: "uppercase",
-              letterSpacing: 1,
-              textDecoration: "underline",
-            }}>
-              ← Вернуться на главную
+        {/* MARQUEE */}
+        <div className="marquee">
+          <div className="marquee-content">
+            &nbsp; * РЕМОНТ ОПРАВ * ЗАМЕНА ЛИНЗ * ОЧКИ НА ЗАКАЗ * СРОЧНО ЗА ЧАС * ГАРАНТИЯ КАЧЕСТВА * СКОРО В МОСКВЕ *
+            РЕМОНТ ОПРАВ * ЗАМЕНА ЛИНЗ * ОЧКИ НА ЗАКАЗ * СРОЧНО ЗА ЧАС * ГАРАНТИЯ КАЧЕСТВА * СКОРО В МОСКВЕ
+          </div>
+        </div>
+
+        {/* ЧТО БУДЕТ В МОСКВЕ */}
+        <section className="section-padding">
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Что будет в филиале</h2>
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Все услуги якутской мастерской — в Москве</p>
+          <div className="menu-grid">
+            <div className="menu-card">
+              <span className="menu-tag">Срочно</span>
+              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/d84de801-f02b-47c1-8ceb-184f8320f6ce.jpg" alt="Ремонт оправы" />
+              <div className="menu-card-body">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                  <h3 style={{ fontWeight: 600, fontSize: 16, letterSpacing: "-0.3px" }}>Ремонт оправы</h3>
+                  <span className="price">от 500 ₽</span>
+                </div>
+                <p style={{ fontSize: 13, color: "var(--gray)", lineHeight: 1.5 }}>Пайка металла, замена винтов, носоупоров, восстановление дужек.</p>
+              </div>
+            </div>
+            <div className="menu-card">
+              <span className="menu-tag" style={{ background: "var(--secondary)" }}>Точность</span>
+              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/5f1d99da-f588-4d48-9de5-2edcc11beccd.jpg" alt="Замена линз" />
+              <div className="menu-card-body">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                  <h3 style={{ fontWeight: 600, fontSize: 16, letterSpacing: "-0.3px" }}>Замена линз</h3>
+                  <span className="price">от 1 200 ₽</span>
+                </div>
+                <p style={{ fontSize: 13, color: "var(--gray)", lineHeight: 1.5 }}>Линзы по рецепту с антибликом и защитой от UV.</p>
+              </div>
+            </div>
+            <div className="menu-card">
+              <span className="menu-tag" style={{ background: "var(--accent)", color: "var(--dark)" }}>Под ключ</span>
+              <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/60e46d97-41ed-4613-8f88-442fa30a06d0.jpg" alt="Очки на заказ" />
+              <div className="menu-card-body">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                  <h3 style={{ fontWeight: 600, fontSize: 16, letterSpacing: "-0.3px" }}>Очки на заказ</h3>
+                  <span className="price">от 2 500 ₽</span>
+                </div>
+                <p style={{ fontSize: 13, color: "var(--gray)", lineHeight: 1.5 }}>Подберём оправу и соберём очки полностью под ваше зрение.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ПОЧЕМУ МЫ */}
+        <section className="retro-vibe">
+          <div>
+            <h2 className="vibe-title">Качество якутской мастерской — в Москве.</h2>
+            <p className="vibe-text">
+              За 10 лет работы в Якутске мы отточили каждый процесс. Теперь открываем филиал в Москве — с тем же оборудованием, теми же стандартами и той же скоростью.
+            </p>
+            <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "white", color: "var(--primary)", display: "inline-block" }}>
+              Написать в Telegram
             </a>
+          </div>
+          <div className="vibe-img"></div>
+        </section>
+
+        {/* ПРЕИМУЩЕСТВА */}
+        <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 48 }}>Почему Очки Плюс</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, maxWidth: 900, margin: "0 auto" }}>
+            {[
+              { icon: "⚡", title: "Ремонт за час", desc: "Большинство работ выполняем прямо при вас" },
+              { icon: "✅", title: "Гарантия", desc: "Гарантия на каждую выполненную работу" },
+              { icon: "💳", title: "Любая оплата", desc: "Наличные, карты, безналичный расчёт" },
+              { icon: "🏢", title: "Юр. лица", desc: "Договоры, счета, все документы для бухгалтерии" },
+            ].map((item) => (
+              <div key={item.title} style={{ textAlign: "center", padding: "28px 20px", borderRadius: 18, background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)" }}>
+                <div style={{ fontSize: 40, marginBottom: 14 }}>{item.icon}</div>
+                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, letterSpacing: "-0.3px" }}>{item.title}</div>
+                <div style={{ fontSize: 13, color: "var(--gray)", lineHeight: 1.6 }}>{item.desc}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* УВЕДОМЛЕНИЕ */}
+        <section className="section-padding">
+          <div style={{ maxWidth: 560, margin: "0 auto", background: "white", borderRadius: 24, padding: "48px 40px", textAlign: "center", boxShadow: "0 8px 48px rgba(0,0,0,0.08)" }}>
+            <div style={{ fontSize: 52, marginBottom: 20 }}>🔔</div>
+            <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 12, letterSpacing: "-0.8px" }}>Узнайте первым об открытии</h2>
+            <p style={{ color: "var(--gray)", fontSize: 15, lineHeight: 1.6, marginBottom: 32 }}>
+              Напишите нам в Telegram — мы сообщим, как только московский филиал откроет двери.
+            </p>
+            <a
+              href="https://t.me/+79141160007"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-cta"
+              style={{ background: "var(--primary)", color: "white", fontSize: 16, padding: "14px 32px", display: "inline-block" }}
+            >
+              Написать в Telegram
+            </a>
+            <div style={{ marginTop: 24 }}>
+              <a href="/" style={{ color: "var(--primary)", fontSize: 14, fontWeight: 500 }}>← Вернуться на главную (Якутск)</a>
+            </div>
           </div>
         </section>
       </main>
+
+      <footer>
+        <div>
+          <div className="footer-logo">Очки Плюс</div>
+          <p style={{ color: "var(--gray)", lineHeight: 1.6, fontSize: 14 }}>
+            Срочный ремонт и изготовление очков. Скоро в Москве.
+          </p>
+        </div>
+        <div className="footer-links">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="/" style={{ color: "inherit", textDecoration: "none" }}>Якутск</a></li>
+            <li><a href="/moscow" style={{ color: "inherit", textDecoration: "none" }}>Москва</a></li>
+            <li><a href="#" style={{ color: "inherit", textDecoration: "none" }}>Услуги</a></li>
+            <li><a href="#" style={{ color: "inherit", textDecoration: "none" }}>Контакты</a></li>
+          </ul>
+        </div>
+        <div className="footer-links">
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="https://t.me/+79141160007" style={{ color: "inherit", textDecoration: "none" }}>Telegram</a></li>
+            <li><a href="tel:+79141160007" style={{ color: "inherit", textDecoration: "none" }}>+7 914 116-00-07</a></li>
+          </ul>
+        </div>
+        <div className="footer-bottom">
+          <span>2025 Очки Плюс</span>
+          <span>Москва — скоро открытие</span>
+        </div>
+      </footer>
     </>
   );
 }
