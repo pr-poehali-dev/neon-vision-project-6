@@ -99,7 +99,7 @@ const SERVICES = [
     price: "от 500 ₽",
     desc: "Пайка, замена винтов, носоупоры, дужки",
     tag: "Срочно",
-    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/442d4996-1906-4605-ab97-403444922505.png",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/7152e9f6-0c1e-4107-ba7f-41291ec29d23.png",
     details: "Восстановим оправу любой сложности — пайка металла, замена винтиков, носоупоров и дужек. Большинство работ выполняем при вас за 30–60 минут.",
     options: [
       { label: "Пайка титановых оправ", price: "от 500 ₽" },
