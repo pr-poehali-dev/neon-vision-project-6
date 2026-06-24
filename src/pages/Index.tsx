@@ -404,9 +404,9 @@ export default function Index() {
             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, marginBottom: 24, fontWeight: 600, letterSpacing: 1 }}>
               БЫСТРО. ТОЧНО. НАДЁЖНО.
             </p>
-            <button className="btn-cta" style={{ background: "white", color: "var(--primary)" }}>
+            <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "white", color: "var(--primary)", display: "inline-block" }}>
               Записаться
-            </button>
+            </a>
           </div>
           <div className="vibe-img"></div>
         </section>
