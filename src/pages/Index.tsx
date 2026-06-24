@@ -131,7 +131,7 @@ const SERVICES = [
     price: "от 2 500 ₽",
     desc: "Подбор оправы + изготовление под рецепт",
     tag: null,
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/b3bbbb83-833c-47ce-b566-f3887b12534f.jpg",
     details: "Поможем подобрать оправу из нашего каталога и изготовим линзы по рецепту врача. Готовые очки — в течение 1–3 дней.",
     options: [
       { label: "Оправа + однофокальные линзы", price: "от 2 500 ₽" },
@@ -145,7 +145,7 @@ const SERVICES = [
     price: "Бесплатно",
     desc: "Профессиональная чистка линз и оправы",
     tag: null,
-    image: "https://images.unsplash.com/photo-1586892478025-2b5472316994?w=600&q=80",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/5e67fde2-52a6-487d-8972-0610fd3e93e0.png",
     details: "Профессиональная ультразвуковая очистка очков. Удаляем загрязнения, жировые следы и налёт с линз и оправы.",
     options: [
       { label: "Ультразвуковая очистка", price: "Бесплатно" },
@@ -158,7 +158,7 @@ const SERVICES = [
     price: "от 200 ₽",
     desc: "Подгонка по форме лица, натяжка дужек",
     tag: null,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/cc3ad788-3458-4225-9786-8fa0c961aa88.jpg",
     details: "Отрегулируем очки точно по форме вашего лица — выровняем дужки, подберём посадку, чтобы очки сидели удобно.",
     options: [
       { label: "Регулировка дужек", price: "200 ₽" },
@@ -171,7 +171,7 @@ const SERVICES = [
     price: "от 800 ₽",
     desc: "Вставка стёкол в готовую оправу",
     tag: null,
-    image: "https://images.unsplash.com/photo-1543791738-cb963b524bdb?w=600&q=80",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/7744f9d3-3466-4466-b715-28dace115192.jpg",
     details: "Вставим готовые стёкла в вашу оправу. Работаем с пластиковыми, металлическими и безободковыми оправами.",
     options: [
       { label: "Изготовление очков в ободковую оправу", price: "от 800 ₽" },
@@ -186,7 +186,7 @@ const SERVICES = [
     price: "Бесплатно",
     desc: "Забираем и привозим очки — бесплатно для организаций",
     tag: "Юр. лица",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/8e118df9-f805-43c9-8205-7ea65ccfb4b5.jpg",
     details: "Для организаций и компаний — выезжаем к вам, забираем очки сотрудников, ремонтируем и возвращаем. Без лишних поездок.",
     options: [
       { label: "Выезд курьера", price: "Бесплатно" },
@@ -198,7 +198,7 @@ const SERVICES = [
     price: "По запросу",
     desc: "Корпоративное обслуживание сотрудников на выгодных условиях",
     tag: "Юр. лица",
-    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/576dd011-505d-4701-8d0b-5b5083bfb01a.jpg",
     details: "Предлагаем организациям выгодные условия на обслуживание очков сотрудников. Корпоративный договор, бесплатный выезд курьера, приоритетное выполнение заказов и скидки на весь спектр услуг.",
     options: [
       { label: "Корпоративная скидка на ремонт", price: "По запросу" },
