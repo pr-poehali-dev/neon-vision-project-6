@@ -659,9 +659,8 @@ export default function Index() {
               </div>
             ))}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12, maxWidth: 700, margin: "0 auto", borderRadius: 20, overflow: "hidden" }}>
-            <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/fe0893cd-6cb4-4bd0-bb15-6769a876f4b7.png" alt="Очки Плюс — оптическая мастерская" style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 16 }} />
-            <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/90b2cd4d-0c6a-4c3e-9f66-201367be5b06.png" alt="Мастерская" style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 16 }} />
+          <div style={{ maxWidth: 700, margin: "0 auto", borderRadius: 16, overflow: "hidden" }}>
+            <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/fe0893cd-6cb4-4bd0-bb15-6769a876f4b7.png" alt="Очки Плюс — оптическая мастерская" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
         </section>
 
