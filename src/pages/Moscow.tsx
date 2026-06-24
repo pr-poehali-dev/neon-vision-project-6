@@ -8,8 +8,8 @@ export default function Moscow() {
         <div className="logo">Очки Плюс</div>
         <nav>
           <a href="/">Главная</a>
-          <a href="#">Услуги</a>
-          <a href="#">Контакты</a>
+          <a href="#services" onClick={e => { e.preventDefault(); document.getElementById("services")?.scrollIntoView({ behavior: "smooth" }); }}>Услуги</a>
+          <a href="#contacts" onClick={e => { e.preventDefault(); document.getElementById("contacts")?.scrollIntoView({ behavior: "smooth" }); }}>Контакты</a>
           <a href="/" style={{ color: "var(--gray)" }}>📍 Якутск</a>
           <a href="/moscow" style={{ color: "var(--primary)" }}>📍 Москва</a>
         </nav>
@@ -63,7 +63,7 @@ export default function Moscow() {
         </div>
 
         {/* ЧТО БУДЕТ В МОСКВЕ */}
-        <section className="section-padding">
+        <section id="services" className="section-padding">
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Что будет в филиале</h2>
           <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Все услуги якутской мастерской — в Москве</p>
           <div className="menu-grid">
@@ -137,7 +137,7 @@ export default function Moscow() {
         </section>
 
         {/* УВЕДОМЛЕНИЕ */}
-        <section className="section-padding">
+        <section id="contacts" className="section-padding">
           <div style={{ maxWidth: 560, margin: "0 auto", background: "white", borderRadius: 24, padding: "48px 40px", textAlign: "center", boxShadow: "0 8px 48px rgba(0,0,0,0.08)" }}>
             <div style={{ fontSize: 52, marginBottom: 20 }}>🔔</div>
             <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 12, letterSpacing: "-0.8px" }}>Узнайте первым об открытии</h2>
