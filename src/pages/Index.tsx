@@ -10,17 +10,34 @@ function ContactForm() {
   const [photos, setPhotos] = useState<{ data: string; name: string }[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handlePhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
-    files.forEach(file => {
+  const compressPhoto = (file: File): Promise<{ data: string; name: string }> =>
+    new Promise(resolve => {
       const reader = new FileReader();
       reader.onload = () => {
-        setPhotos(prev => [
-          ...prev,
-          { data: (reader.result as string).split(",")[1], name: file.name }
-        ]);
+        const img = new Image();
+        img.onload = () => {
+          const MAX = 1200;
+          let w = img.width, h = img.height;
+          if (w > MAX || h > MAX) {
+            if (w > h) { h = Math.round(h * MAX / w); w = MAX; }
+            else { w = Math.round(w * MAX / h); h = MAX; }
+          }
+          const canvas = document.createElement("canvas");
+          canvas.width = w; canvas.height = h;
+          canvas.getContext("2d")!.drawImage(img, 0, 0, w, h);
+          const data = canvas.toDataURL("image/jpeg", 0.8).split(",")[1];
+          resolve({ data, name: file.name.replace(/\.[^.]+$/, ".jpg") });
+        };
+        img.src = reader.result as string;
       };
       reader.readAsDataURL(file);
+    });
+
+  const handlePhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    files.forEach(async file => {
+      const compressed = await compressPhoto(file);
+      setPhotos(prev => [...prev, compressed]);
     });
     e.target.value = "";
   };

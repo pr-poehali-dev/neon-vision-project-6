@@ -2,6 +2,7 @@ import json
 import os
 import base64
 import urllib.request
+import urllib.error
 import boto3
 
 
@@ -11,7 +12,12 @@ def tg_send(token: str, method: str, data: bytes, content_type: str):
         data=data,
         headers={'Content-Type': content_type}
     )
-    urllib.request.urlopen(req)
+    try:
+        urllib.request.urlopen(req)
+    except urllib.error.HTTPError as e:
+        err_body = e.read().decode()
+        print(f"[TG ERROR] {method}: {e.code} {err_body}")
+        raise
 
 
 def send_photo(token: str, chat_id: str, photo_bytes: bytes, photo_name: str, content_type: str, caption: str = ""):
@@ -44,11 +50,22 @@ def handler(event: dict, context) -> dict:
             'body': ''
         }
 
-    body = json.loads(event.get('body', '{}'))
+    try:
+        body = json.loads(event.get('body', '{}'))
+    except Exception as e:
+        print(f"[ERROR] JSON parse: {e}")
+        return {
+            'statusCode': 400,
+            'headers': {'Access-Control-Allow-Origin': '*'},
+            'body': json.dumps({'error': 'Неверный формат запроса'})
+        }
+
     name = body.get('name', '').strip()
     phone = body.get('phone', '').strip()
     comment = body.get('comment', '').strip()
     photos = body.get('photos', [])
+
+    print(f"[INFO] Request: name={name}, phone={phone}, photos={len(photos)}")
 
     if not name or not phone:
         return {
@@ -70,27 +87,38 @@ def handler(event: dict, context) -> dict:
     if photos:
         text += f"\n📷 *Фото:* {len(photos)} шт."
 
-    if photos:
-        s3 = boto3.client(
-            's3',
-            endpoint_url='https://bucket.poehali.dev',
-            aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
-            aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY']
-        )
+    try:
+        if photos:
+            s3 = boto3.client(
+                's3',
+                endpoint_url='https://bucket.poehali.dev',
+                aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
+                aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY']
+            )
 
-        for i, p in enumerate(photos[:10]):
-            photo_bytes = base64.b64decode(p['data'])
-            photo_name = p.get('name', f'photo_{i}.jpg')
-            ext = photo_name.rsplit('.', 1)[-1].lower() if '.' in photo_name else 'jpg'
-            ct = f"image/{ext}" if ext in ('jpg', 'jpeg', 'png', 'gif', 'webp') else 'image/jpeg'
+            for i, p in enumerate(photos[:10]):
+                photo_bytes = base64.b64decode(p['data'])
+                photo_name = p.get('name', f'photo_{i}.jpg')
+                ext = photo_name.rsplit('.', 1)[-1].lower() if '.' in photo_name else 'jpg'
+                ct = f"image/{ext}" if ext in ('jpg', 'jpeg', 'png', 'gif', 'webp') else 'image/jpeg'
 
-            s3.put_object(Bucket='files', Key=f"repairs/{context.request_id}_{i}.{ext}", Body=photo_bytes, ContentType=ct)
+                print(f"[INFO] Photo {i}: {photo_name}, size={len(photo_bytes)} bytes")
 
-            caption = text if i == 0 else ""
-            send_photo(token, chat_id, photo_bytes, photo_name, ct, caption)
-    else:
-        payload = json.dumps({'chat_id': chat_id, 'text': text, 'parse_mode': 'Markdown'}).encode()
-        tg_send(token, "sendMessage", payload, 'application/json')
+                s3.put_object(Bucket='files', Key=f"repairs/{context.request_id}_{i}.{ext}", Body=photo_bytes, ContentType=ct)
+
+                caption = text if i == 0 else ""
+                send_photo(token, chat_id, photo_bytes, photo_name, ct, caption)
+        else:
+            payload = json.dumps({'chat_id': chat_id, 'text': text, 'parse_mode': 'Markdown'}).encode()
+            tg_send(token, "sendMessage", payload, 'application/json')
+
+    except Exception as e:
+        print(f"[ERROR] Send failed: {e}")
+        return {
+            'statusCode': 500,
+            'headers': {'Access-Control-Allow-Origin': '*'},
+            'body': json.dumps({'error': str(e)})
+        }
 
     return {
         'statusCode': 200,
