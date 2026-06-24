@@ -469,6 +469,8 @@ export default function Index() {
             {[
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/4e50a895-8345-4087-bc44-c1a2bc1e1f2a.png", alt: "До и после ремонта оправы" },
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/34be55b3-c5a7-4607-947f-df4292b40df0.png", alt: "До и после ремонта очков" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/90b2cd4d-0c6a-4c3e-9f66-201367be5b06.png", alt: "Очки в мастерской" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/2675f085-318e-4ad7-995a-b9da2b08347a.jpeg", alt: "Очки на заказ" },
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/dd35a0e4-d54b-417e-a21a-d8948f6f98b8.png", alt: "Работа мастерской" },
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/16503f70-e163-4a92-952c-7ef8c8981b78.png", alt: "Работа мастерской" },
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/23c21043-ca62-429b-a944-4c1d416df996.jpg", alt: "Работа мастерской" },
