@@ -7,7 +7,18 @@ function ContactForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
+  const [photo, setPhoto] = useState<string | null>(null);
+  const [photoName, setPhotoName] = useState<string>("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handlePhoto = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setPhotoName(file.name);
+    const reader = new FileReader();
+    reader.onload = () => setPhoto((reader.result as string).split(",")[1]);
+    reader.readAsDataURL(file);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,11 +27,11 @@ function ContactForm() {
       const res = await fetch(SEND_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, comment }),
+        body: JSON.stringify({ name, phone, comment, photo, photoName }),
       });
       if (res.ok) {
         setStatus("success");
-        setName(""); setPhone(""); setComment("");
+        setName(""); setPhone(""); setComment(""); setPhoto(null); setPhotoName("");
       } else {
         setStatus("error");
       }
@@ -76,6 +87,14 @@ function ContactForm() {
                 rows={3}
                 style={{ width: "100%", padding: "12px 16px", border: "1px solid rgba(0,0,0,0.12)", borderRadius: 12, fontSize: 16, fontFamily: "inherit", outline: "none", resize: "vertical", boxSizing: "border-box" }}
               />
+            </div>
+            <div>
+              <label style={{ fontWeight: 500, fontSize: 13, color: "var(--gray)", display: "block", marginBottom: 6 }}>Фото поломки (необязательно)</label>
+              <label style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 16px", border: "1px dashed rgba(0,0,0,0.2)", borderRadius: 12, cursor: "pointer", fontSize: 14, color: photo ? "var(--primary)" : "var(--gray)", background: photo ? "rgba(0,100,200,0.04)" : "transparent" }}>
+                <span style={{ fontSize: 20 }}>{photo ? "✅" : "📎"}</span>
+                <span>{photo ? photoName : "Прикрепить фото"}</span>
+                <input type="file" accept="image/*" onChange={handlePhoto} style={{ display: "none" }} />
+              </label>
             </div>
             {status === "error" && <p style={{ color: "#ff3b30", fontSize: 14 }}>Ошибка отправки. Попробуйте ещё раз или напишите нам в Telegram.</p>}
             <button
