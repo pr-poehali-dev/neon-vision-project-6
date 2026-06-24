@@ -740,13 +740,23 @@ export default function Index() {
           <h4>Контакты</h4>
           <ul>
             <li>
-              <a href="https://t.me/+79141160007" style={{ color: "inherit", textDecoration: "none" }}>
-                Telegram: @+79141160007
+              <a href="tel:+79141160007" style={{ color: "inherit", textDecoration: "none" }}>
+                📞 +7 914 116-00-07
               </a>
             </li>
             <li>
-              <a href="tel:+79141160007" style={{ color: "inherit", textDecoration: "none" }}>
-                Тел: +7 914 116-00-07
+              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                ✈️ Telegram
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/79141160007" target="_blank" rel="noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                💬 WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="https://maxim-messenger.com" target="_blank" rel="noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                🟡 Мессенджер Макс
               </a>
             </li>
             <li>
@@ -756,10 +766,9 @@ export default function Index() {
                 rel="noreferrer"
                 style={{ color: "inherit", textDecoration: "none" }}
               >
-                ул. Орджоникидзе, 20, каб. 207
+                📍 ул. Орджоникидзе, 20, каб. 207
               </a>
             </li>
-            <li>г. Якутск</li>
           </ul>
         </div>
         <div className="footer-bottom">
