@@ -1,43 +1,12 @@
 import json
 import os
 import base64
-import urllib.request
-import urllib.error
+import requests
 import boto3
 
 
-def tg_send(token: str, method: str, data: bytes, content_type: str):
-    req = urllib.request.Request(
-        f"https://api.telegram.org/bot{token}/{method}",
-        data=data,
-        headers={'Content-Type': content_type}
-    )
-    try:
-        urllib.request.urlopen(req)
-    except urllib.error.HTTPError as e:
-        err_body = e.read().decode()
-        print(f"[TG ERROR] {method}: {e.code} {err_body}")
-        raise
-
-
-def send_photo(token: str, chat_id: str, photo_bytes: bytes, photo_name: str, content_type: str, caption: str = ""):
-    boundary = "----FormBoundary"
-    parts = [
-        f'--{boundary}\r\nContent-Disposition: form-data; name="chat_id"\r\n\r\n{chat_id}'.encode(),
-        f'--{boundary}\r\nContent-Disposition: form-data; name="parse_mode"\r\n\r\nMarkdown'.encode(),
-    ]
-    if caption:
-        parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="caption"\r\n\r\n{caption}'.encode())
-    parts.append(
-        f'--{boundary}\r\nContent-Disposition: form-data; name="photo"; filename="{photo_name}"\r\nContent-Type: {content_type}\r\n\r\n'.encode()
-        + photo_bytes
-    )
-    parts.append(f'--{boundary}--'.encode())
-    tg_send(token, "sendPhoto", b'\r\n'.join(parts), f'multipart/form-data; boundary={boundary}')
-
-
 def handler(event: dict, context) -> dict:
-    """Отправляет заявку с сайта в Telegram-бот мастерской Очки Плюс (с несколькими фото поломки)"""
+    """Отправляет заявку с сайта в Telegram-бот мастерской Очки Плюс (с фото поломки)"""
     if event.get('httpMethod') == 'OPTIONS':
         return {
             'statusCode': 200,
@@ -65,7 +34,7 @@ def handler(event: dict, context) -> dict:
     comment = body.get('comment', '').strip()
     photos = body.get('photos', [])
 
-    print(f"[INFO] Request: name={name}, phone={phone}, photos={len(photos)}")
+    print(f"[INFO] name={name}, phone={phone}, photos={len(photos)}")
 
     if not name or not phone:
         return {
@@ -76,6 +45,7 @@ def handler(event: dict, context) -> dict:
 
     token = os.environ['TELEGRAM_BOT_TOKEN']
     chat_id = os.environ['TELEGRAM_CHAT_ID']
+    tg_base = f"https://api.telegram.org/bot{token}"
 
     text = (
         f"🔔 *Новая заявка с сайта*\n\n"
@@ -96,24 +66,41 @@ def handler(event: dict, context) -> dict:
                 aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY']
             )
 
-            for i, p in enumerate(photos[:10]):
+            for i, p in enumerate(photos[:5]):
                 photo_bytes = base64.b64decode(p['data'])
                 photo_name = p.get('name', f'photo_{i}.jpg')
                 ext = photo_name.rsplit('.', 1)[-1].lower() if '.' in photo_name else 'jpg'
                 ct = f"image/{ext}" if ext in ('jpg', 'jpeg', 'png', 'gif', 'webp') else 'image/jpeg'
 
-                print(f"[INFO] Photo {i}: {photo_name}, size={len(photo_bytes)} bytes")
+                print(f"[INFO] Photo {i}: {photo_name}, {len(photo_bytes)} bytes")
 
-                s3.put_object(Bucket='files', Key=f"repairs/{context.request_id}_{i}.{ext}", Body=photo_bytes, ContentType=ct)
+                s3.put_object(
+                    Bucket='files',
+                    Key=f"repairs/{context.request_id}_{i}.{ext}",
+                    Body=photo_bytes,
+                    ContentType=ct
+                )
 
                 caption = text if i == 0 else ""
-                send_photo(token, chat_id, photo_bytes, photo_name, ct, caption)
+                resp = requests.post(
+                    f"{tg_base}/sendPhoto",
+                    data={'chat_id': chat_id, 'caption': caption, 'parse_mode': 'Markdown'},
+                    files={'photo': (photo_name, photo_bytes, ct)},
+                    timeout=20
+                )
+                print(f"[INFO] sendPhoto: {resp.status_code} {resp.text[:200]}")
+                resp.raise_for_status()
         else:
-            payload = json.dumps({'chat_id': chat_id, 'text': text, 'parse_mode': 'Markdown'}).encode()
-            tg_send(token, "sendMessage", payload, 'application/json')
+            resp = requests.post(
+                f"{tg_base}/sendMessage",
+                json={'chat_id': chat_id, 'text': text, 'parse_mode': 'Markdown'},
+                timeout=10
+            )
+            print(f"[INFO] sendMessage: {resp.status_code} {resp.text[:200]}")
+            resp.raise_for_status()
 
     except Exception as e:
-        print(f"[ERROR] Send failed: {e}")
+        print(f"[ERROR] {e}")
         return {
             'statusCode': 500,
             'headers': {'Access-Control-Allow-Origin': '*'},
