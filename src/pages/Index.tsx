@@ -309,6 +309,38 @@ export default function Index() {
           </div>
         </section>
 
+        {/* О КОМПАНИИ */}
+        <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 40 }}>
+              <div>
+                <div style={{ display: "inline-block", background: "rgba(0,113,227,0.1)", color: "var(--primary)", fontSize: 12, fontWeight: 600, padding: "5px 14px", borderRadius: 980, marginBottom: 20 }}>
+                  О компании
+                </div>
+                <h2 className="section-title" style={{ marginBottom: 24 }}>Очки Плюс —<br />с 2015 года</h2>
+                <p style={{ fontSize: 17, color: "var(--gray)", lineHeight: 1.75, marginBottom: 20 }}>
+                  Мы основали мастерскую в 2015 году с одной целью — делать качественные очки быстро и честно. За эти годы тысячи жителей Якутска доверили нам своё зрение.
+                </p>
+                <p style={{ fontSize: 17, color: "var(--gray)", lineHeight: 1.75, marginBottom: 36 }}>
+                  В нашей команде работают профессионалы с многолетним опытом. Мы ценим качество каждой работы и даём гарантию на все наши услуги.
+                </p>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+                  {[
+                    { num: "10+", label: "лет на рынке" },
+                    { num: "5 000+", label: "довольных клиентов" },
+                    { num: "1 час", label: "срок большинства работ" },
+                  ].map((stat) => (
+                    <div key={stat.label} style={{ textAlign: "center", padding: "20px 12px", borderRadius: 16, background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)" }}>
+                      <div style={{ fontSize: 26, fontWeight: 700, color: "var(--primary)", letterSpacing: "-1px", marginBottom: 4 }}>{stat.num}</div>
+                      <div style={{ fontSize: 12, color: "var(--gray)", lineHeight: 1.4 }}>{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ЦЕНЫ */}
         <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Цены</h2>
