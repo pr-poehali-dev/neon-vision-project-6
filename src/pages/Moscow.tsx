@@ -1,4 +1,7 @@
+import { useLocationModal } from "@/components/LocationModal";
+
 export default function Moscow() {
+  const { open } = useLocationModal();
   return (
     <>
       <header className="header">
@@ -11,8 +14,7 @@ export default function Moscow() {
           <a href="/moscow" style={{ color: "var(--primary)" }}>📍 Москва</a>
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <a href="/" className="btn-cta" style={{ background: "rgba(0,0,0,0.06)", color: "var(--dark)", fontSize: 12 }}>📍 Якутск</a>
-          <a href="/moscow" className="btn-cta" style={{ background: "rgba(0,113,227,0.12)", color: "var(--primary)", fontSize: 12 }}>📍 Москва</a>
+          <button onClick={open} className="btn-cta" style={{ background: "rgba(0,113,227,0.12)", color: "var(--primary)", fontSize: 12, border: "none" }}>📍 Москва</button>
           <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 12 }}>Записаться</a>
         </div>
       </header>
