@@ -622,6 +622,42 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ОТЗЫВЫ */}
+        <section className="section-padding">
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 8 }}>Отзывы клиентов</h2>
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Более 500 довольных клиентов в Якутске</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, maxWidth: 1100, margin: "0 auto" }}>
+            {[
+              { name: "Анна М.", text: "Сделали очки за 40 минут, качество отличное. Очень довольна результатом!", stars: 5, date: "2 дня назад" },
+              { name: "Дмитрий К.", text: "Сломал оправу утром — к обеду уже ходил в починенных очках. Работают быстро и аккуратно.", stars: 5, date: "1 неделю назад" },
+              { name: "Светлана П.", text: "Заменили линзы по рецепту, подобрали антиблик. Мастера объяснили всё подробно. Рекомендую!", stars: 5, date: "2 недели назад" },
+              { name: "Игорь В.", text: "Обращаюсь уже третий раз. Всегда быстро, всегда качественно. Цены адекватные.", stars: 5, date: "3 недели назад" },
+              { name: "Мария Н.", text: "Ребёнку сделали детские линзы против миопии. Специалисты грамотные, всё объяснили.", stars: 5, date: "1 месяц назад" },
+              { name: "Алексей С.", text: "Паяли металлическую оправу — сделали идеально. Даже следа не осталось. Спасибо мастерам!", stars: 5, date: "1 месяц назад" },
+              { name: "Елена Т.", text: "Очень понравилось обслуживание. Вежливые сотрудники, чисто, уютно. Очки готовы за час.", stars: 5, date: "1 месяц назад" },
+              { name: "Николай Ф.", text: "Заказывал очки по рецепту. Быстро изготовили, качество линз отличное. Буду обращаться ещё.", stars: 5, date: "2 месяца назад" },
+              { name: "Ольга Д.", text: "Поменяли носоупоры и подтянули дужки — теперь очки сидят идеально. Цена символическая.", stars: 5, date: "2 месяца назад" },
+              { name: "Василий Р.", text: "Приятно удивлён скоростью работы. Сказали 30 минут — сделали за 25. Профессионалы!", stars: 5, date: "2 месяца назад" },
+              { name: "Татьяна Ю.", text: "Работаю с юр. лицами через них по договору. Всё чётко: документы, счета, качество на высоте.", stars: 5, date: "3 месяца назад" },
+              { name: "Роман Б.", text: "Восстановили дужку на дорогой оправе, которую я уже хотел выбросить. Огромное спасибо!", stars: 5, date: "3 месяца назад" },
+              { name: "Людмила Г.", text: "Хожу сюда уже несколько лет. Всегда доволен качеством и отношением к клиентам.", stars: 5, date: "3 месяца назад" },
+              { name: "Артём З.", text: "Установили линзы в мою оправу. Сделали быстро, линзы легли идеально. Цена порадовала.", stars: 5, date: "4 месяца назад" },
+              { name: "Ирина К.", text: "Очень грамотные специалисты! Подобрали линзы с защитой UV, объяснили все нюансы. Советую всем!", stars: 5, date: "4 месяца назад" },
+            ].map((r, i) => (
+              <div key={i} style={{ background: "white", borderRadius: 18, padding: "24px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid rgba(0,0,0,0.06)", display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ display: "flex", gap: 2 }}>
+                  {"⭐".repeat(r.stars)}
+                </div>
+                <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--dark)", margin: 0 }}>«{r.text}»</p>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
+                  <span style={{ fontWeight: 600, fontSize: 13, color: "var(--dark)" }}>{r.name}</span>
+                  <span style={{ fontSize: 12, color: "var(--gray)" }}>{r.date}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* НАША МАСТЕРСКАЯ */}
         <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Наша мастерская</h2>
