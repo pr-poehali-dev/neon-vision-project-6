@@ -531,11 +531,11 @@ export default function Index() {
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: 16, flex: 1 }}>
                       <div>
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 2 }}>
+                        {item.tag && (
+                          <span style={{ display: "inline-block", background: isOpen ? "rgba(255,255,255,0.25)" : "var(--primary)", color: "white", fontSize: 10, fontWeight: 600, padding: "2px 8px", borderRadius: 980, marginBottom: 4 }}>{item.tag}</span>
+                        )}
+                        <div style={{ marginBottom: 2 }}>
                           <span style={{ fontSize: 16, fontWeight: 700, color: isOpen ? "white" : "var(--dark)", letterSpacing: "-0.3px" }}>{item.name}</span>
-                          {item.tag && (
-                            <span style={{ background: isOpen ? "rgba(255,255,255,0.25)" : "var(--primary)", color: "white", fontSize: 10, fontWeight: 600, padding: "2px 8px", borderRadius: 980 }}>{item.tag}</span>
-                          )}
                         </div>
                         <div style={{ fontSize: 13, color: isOpen ? "rgba(255,255,255,0.75)" : "var(--gray)" }}>{item.desc}</div>
                       </div>
