@@ -460,34 +460,24 @@ export default function Index() {
         </section>
 
         <section id="gallery" className="section-padding">
-          <h2 className="section-title" style={{ marginBottom: "40px", textAlign: "center" }}>
+          <h2 className="section-title" style={{ marginBottom: "12px", textAlign: "center" }}>
             Наши работы
           </h2>
-          <div className="social-grid">
-            <div className="social-item">
-              <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/dd35a0e4-d54b-417e-a21a-d8948f6f98b8.png"
-                alt="Работа 1"
-              />
-            </div>
-            <div className="social-item">
-              <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/16503f70-e163-4a92-952c-7ef8c8981b78.png"
-                alt="Работа 2"
-              />
-            </div>
-            <div className="social-item">
-              <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/23c21043-ca62-429b-a944-4c1d416df996.jpg"
-                alt="Работа 3"
-              />
-            </div>
-            <div className="social-item">
-              <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/1bfaf060-2d73-4d24-ade0-628d06b0ab27.jpg"
-                alt="Работа 4"
-              />
-            </div>
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 40, fontSize: 16 }}>До и после ремонта</p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 16, maxWidth: 1100, margin: "0 auto 48px" }}>
+            {[
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/4e50a895-8345-4087-bc44-c1a2bc1e1f2a.png", alt: "До и после ремонта оправы" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/34be55b3-c5a7-4607-947f-df4292b40df0.png", alt: "До и после ремонта очков" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/dd35a0e4-d54b-417e-a21a-d8948f6f98b8.png", alt: "Работа мастерской" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/16503f70-e163-4a92-952c-7ef8c8981b78.png", alt: "Работа мастерской" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/23c21043-ca62-429b-a944-4c1d416df996.jpg", alt: "Работа мастерской" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/1bfaf060-2d73-4d24-ade0-628d06b0ab27.jpg", alt: "Работа мастерской" },
+            ].map((img, i) => (
+              <div key={i} style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", aspectRatio: "4/3" }}>
+                <img src={img.src} alt={img.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              </div>
+            ))}
           </div>
         </section>
 
