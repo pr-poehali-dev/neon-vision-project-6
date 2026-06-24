@@ -128,7 +128,7 @@ export default function Index() {
               <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 15, padding: "12px 24px" }}>
                 Записаться
               </a>
-              <button className="btn-cta" style={{ background: "rgba(0,0,0,0.07)", color: "var(--dark)", fontSize: 15, padding: "12px 24px" }}>
+              <button onClick={() => document.getElementById("prices")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta" style={{ background: "rgba(0,0,0,0.07)", color: "var(--dark)", fontSize: 15, padding: "12px 24px" }}>
                 Услуги и цены
               </button>
             </div>
@@ -342,7 +342,7 @@ export default function Index() {
         </section>
 
         {/* ЦЕНЫ */}
-        <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
+        <section id="prices" className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Цены</h2>
           <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Прозрачные цены без скрытых доплат</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, maxWidth: 900, margin: "0 auto" }}>
