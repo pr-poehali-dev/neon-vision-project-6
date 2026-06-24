@@ -210,6 +210,54 @@ const SERVICES = [
   },
 ];
 
+function FloatingActions() {
+  const [expanded, setExpanded] = useState(false);
+  const actions = [
+    { icon: "📞", label: "Позвонить", href: "tel:+79141160007" },
+    { icon: "💬", label: "WhatsApp", href: "https://wa.me/79141160007" },
+    { icon: "✈️", label: "Telegram", href: "https://t.me/+79141160007" },
+    { icon: "📋", label: "Заказать звонок", href: "#contacts", scroll: true },
+    { icon: "📍", label: "Маршрут", href: "https://2gis.ru/yakutsk/search/Очки Плюс" },
+  ];
+  return (
+    <div style={{ position: "fixed", right: 20, bottom: 32, zIndex: 9999, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 10 }}>
+      {expanded && actions.map(a => (
+        <a
+          key={a.label}
+          href={a.href}
+          target={a.scroll ? undefined : "_blank"}
+          rel="noreferrer"
+          onClick={a.scroll ? (e) => { e.preventDefault(); document.getElementById("contacts")?.scrollIntoView({ behavior: "smooth" }); setExpanded(false); } : () => setExpanded(false)}
+          style={{
+            display: "flex", alignItems: "center", gap: 10,
+            background: "white", color: "var(--dark)",
+            padding: "10px 18px", borderRadius: 980,
+            boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+            fontWeight: 500, fontSize: 14, textDecoration: "none",
+            whiteSpace: "nowrap", transition: "transform 0.15s",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
+          onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
+        >
+          <span style={{ fontSize: 18 }}>{a.icon}</span> {a.label}
+        </a>
+      ))}
+      <button
+        onClick={() => setExpanded(v => !v)}
+        style={{
+          width: 56, height: 56, borderRadius: "50%",
+          background: expanded ? "var(--dark)" : "var(--primary)",
+          color: "white", border: "none", cursor: "pointer",
+          fontSize: 24, boxShadow: "0 6px 24px rgba(0,113,227,0.4)",
+          transition: "all 0.2s", display: "flex", alignItems: "center", justifyContent: "center",
+        }}
+      >
+        {expanded ? "✕" : "📞"}
+      </button>
+    </div>
+  );
+}
+
 export default function Index() {
   const { open } = useLocationModal();
   const [openService, setOpenService] = useState<string | null>(null);
@@ -619,6 +667,7 @@ export default function Index() {
             />
           </div>
         </section>
+      <FloatingActions />
       </main>
 
       <footer>
