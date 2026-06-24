@@ -660,7 +660,7 @@ export default function Index() {
             ))}
           </div>
           <div style={{ maxWidth: 700, margin: "0 auto", borderRadius: 16, overflow: "hidden" }}>
-            <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/fe0893cd-6cb4-4bd0-bb15-6769a876f4b7.png" alt="Очки Плюс — оптическая мастерская" style={{ width: "100%", height: "auto", display: "block" }} />
+            <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/fe0893cd-6cb4-4bd0-bb15-6769a876f4b7.png" alt="Очки Плюс — оптическая мастерская" style={{ width: "100%", height: 220, objectFit: "contain", objectPosition: "center", display: "block", background: "#e8f2fb" }} />
           </div>
         </section>
 
