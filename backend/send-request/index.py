@@ -5,8 +5,33 @@ import urllib.request
 import boto3
 
 
+def tg_send(token: str, method: str, data: bytes, content_type: str):
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{token}/{method}",
+        data=data,
+        headers={'Content-Type': content_type}
+    )
+    urllib.request.urlopen(req)
+
+
+def send_photo(token: str, chat_id: str, photo_bytes: bytes, photo_name: str, content_type: str, caption: str = ""):
+    boundary = "----FormBoundary"
+    parts = [
+        f'--{boundary}\r\nContent-Disposition: form-data; name="chat_id"\r\n\r\n{chat_id}'.encode(),
+        f'--{boundary}\r\nContent-Disposition: form-data; name="parse_mode"\r\n\r\nMarkdown'.encode(),
+    ]
+    if caption:
+        parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="caption"\r\n\r\n{caption}'.encode())
+    parts.append(
+        f'--{boundary}\r\nContent-Disposition: form-data; name="photo"; filename="{photo_name}"\r\nContent-Type: {content_type}\r\n\r\n'.encode()
+        + photo_bytes
+    )
+    parts.append(f'--{boundary}--'.encode())
+    tg_send(token, "sendPhoto", b'\r\n'.join(parts), f'multipart/form-data; boundary={boundary}')
+
+
 def handler(event: dict, context) -> dict:
-    """Отправляет заявку с сайта в Telegram-бот мастерской Очки Плюс (с фото поломки)"""
+    """Отправляет заявку с сайта в Telegram-бот мастерской Очки Плюс (с несколькими фото поломки)"""
     if event.get('httpMethod') == 'OPTIONS':
         return {
             'statusCode': 200,
@@ -23,8 +48,7 @@ def handler(event: dict, context) -> dict:
     name = body.get('name', '').strip()
     phone = body.get('phone', '').strip()
     comment = body.get('comment', '').strip()
-    photo_b64 = body.get('photo')
-    photo_name = body.get('photoName', 'photo.jpg')
+    photos = body.get('photos', [])
 
     if not name or not phone:
         return {
@@ -43,52 +67,30 @@ def handler(event: dict, context) -> dict:
     )
     if comment:
         text += f"\n💬 *Комментарий:* {comment}"
+    if photos:
+        text += f"\n📷 *Фото:* {len(photos)} шт."
 
-    if photo_b64:
-        photo_bytes = base64.b64decode(photo_b64)
-        ext = photo_name.rsplit('.', 1)[-1].lower() if '.' in photo_name else 'jpg'
-        content_type = f"image/{ext}" if ext in ('jpg', 'jpeg', 'png', 'gif', 'webp') else 'image/jpeg'
-
+    if photos:
         s3 = boto3.client(
             's3',
             endpoint_url='https://bucket.poehali.dev',
             aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
             aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY']
         )
-        key = f"repairs/{context.request_id}.{ext}"
-        s3.put_object(Bucket='files', Key=key, Body=photo_bytes, ContentType=content_type)
 
-        # Отправляем текст + фото через sendPhoto
-        api_url = f"https://api.telegram.org/bot{token}/sendPhoto"
+        for i, p in enumerate(photos[:10]):
+            photo_bytes = base64.b64decode(p['data'])
+            photo_name = p.get('name', f'photo_{i}.jpg')
+            ext = photo_name.rsplit('.', 1)[-1].lower() if '.' in photo_name else 'jpg'
+            ct = f"image/{ext}" if ext in ('jpg', 'jpeg', 'png', 'gif', 'webp') else 'image/jpeg'
 
-        boundary = "----FormBoundary"
-        body_parts = []
-        body_parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="chat_id"\r\n\r\n{chat_id}'.encode())
-        body_parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="caption"\r\n\r\n{text}'.encode())
-        body_parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="parse_mode"\r\n\r\nMarkdown'.encode())
-        body_parts.append(
-            f'--{boundary}\r\nContent-Disposition: form-data; name="photo"; filename="{photo_name}"\r\nContent-Type: {content_type}\r\n\r\n'.encode()
-            + photo_bytes
-        )
-        body_parts.append(f'--{boundary}--'.encode())
-        multipart_body = b'\r\n'.join(body_parts)
+            s3.put_object(Bucket='files', Key=f"repairs/{context.request_id}_{i}.{ext}", Body=photo_bytes, ContentType=ct)
 
-        req = urllib.request.Request(
-            api_url,
-            data=multipart_body,
-            headers={'Content-Type': f'multipart/form-data; boundary={boundary}'}
-        )
-        urllib.request.urlopen(req)
+            caption = text if i == 0 else ""
+            send_photo(token, chat_id, photo_bytes, photo_name, ct, caption)
     else:
-        # Только текст
-        api_url = f"https://api.telegram.org/bot{token}/sendMessage"
-        payload = json.dumps({
-            'chat_id': chat_id,
-            'text': text,
-            'parse_mode': 'Markdown'
-        }).encode('utf-8')
-        req = urllib.request.Request(api_url, data=payload, headers={'Content-Type': 'application/json'})
-        urllib.request.urlopen(req)
+        payload = json.dumps({'chat_id': chat_id, 'text': text, 'parse_mode': 'Markdown'}).encode()
+        tg_send(token, "sendMessage", payload, 'application/json')
 
     return {
         'statusCode': 200,
