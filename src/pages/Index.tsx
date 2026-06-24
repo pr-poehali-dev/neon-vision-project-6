@@ -117,7 +117,7 @@ const SERVICES = [
     price: "от 1 200 ₽",
     desc: "Линзы по рецепту, антиблик, UV-защита",
     tag: "Популярно",
-    image: "https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?w=600&q=80",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/9a21a0a9-84f5-4ccc-b274-dace8400c7ff.png",
     details: "Изготавливаем линзы по вашему рецепту. Широкий выбор покрытий: антибликовое, UV-защита, фотохромные, голубой фильтр.",
     options: [
       { label: "Однофокальные", price: "от 1 200 ₽" },
