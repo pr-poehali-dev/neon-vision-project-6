@@ -308,6 +308,97 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ЦЕНЫ */}
+        <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Цены</h2>
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Прозрачные цены без скрытых доплат</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, maxWidth: 900, margin: "0 auto" }}>
+            {[
+              { name: "Ремонт оправы", price: "от 500 ₽", desc: "Пайка, замена винтов, носоупоры, дужки", tag: "Срочно" },
+              { name: "Замена линз", price: "от 1 200 ₽", desc: "Линзы по рецепту, антиблик, UV-защита", tag: "Популярно" },
+              { name: "Очки на заказ", price: "от 2 500 ₽", desc: "Подбор оправы + изготовление под рецепт", tag: null },
+              { name: "Подбор оправы", price: "Бесплатно", desc: "Поможем выбрать подходящую оправу", tag: null },
+              { name: "Регулировка очков", price: "от 200 ₽", desc: "Подгонка по форме лица, натяжка дужек", tag: null },
+              { name: "Замена стёкол", price: "от 800 ₽", desc: "Вставка стёкол в готовую оправу", tag: null },
+            ].map((item) => (
+              <div key={item.name} style={{ borderRadius: 16, padding: "24px 26px", background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)", position: "relative", transition: "box-shadow 0.3s", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
+                {item.tag && (
+                  <span style={{ position: "absolute", top: 16, right: 16, background: "var(--primary)", color: "white", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 980 }}>{item.tag}</span>
+                )}
+                <div style={{ fontSize: 22, fontWeight: 700, color: "var(--primary)", marginBottom: 6, letterSpacing: "-0.5px" }}>{item.price}</div>
+                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 6, letterSpacing: "-0.3px" }}>{item.name}</div>
+                <div style={{ fontSize: 13, color: "var(--gray)", lineHeight: 1.5 }}>{item.desc}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* НАШИ ФИЛИАЛЫ */}
+        <section className="section-padding">
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Наши филиалы</h2>
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Работаем в двух городах</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20, maxWidth: 800, margin: "0 auto" }}>
+            <div style={{ borderRadius: 20, overflow: "hidden", background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <div style={{ background: "linear-gradient(135deg, #0071e3, #0099fa)", padding: "28px 28px 20px", color: "white" }}>
+                <div style={{ fontSize: 32, marginBottom: 8 }}>📍</div>
+                <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: "-0.5px" }}>Якутск</div>
+                <div style={{ fontSize: 13, opacity: 0.85, marginTop: 4 }}>Главный филиал</div>
+              </div>
+              <div style={{ padding: "24px 28px" }}>
+                <div style={{ fontSize: 14, color: "var(--gray)", lineHeight: 1.8 }}>
+                  <div>📌 ул. Орджоникидзе, 20, каб. 207</div>
+                  <div>🕐 Пн–Сб: 10:00 – 18:00</div>
+                  <div>📞 +7 914 116-00-07</div>
+                </div>
+                <a href="/" className="btn-cta" style={{ display: "inline-block", marginTop: 20, background: "var(--primary)", color: "white", fontSize: 13 }}>
+                  Перейти на страницу →
+                </a>
+              </div>
+            </div>
+            <div style={{ borderRadius: 20, overflow: "hidden", background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <div style={{ background: "linear-gradient(135deg, #1d1d1f, #444)", padding: "28px 28px 20px", color: "white" }}>
+                <div style={{ fontSize: 32, marginBottom: 8 }}>📍</div>
+                <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: "-0.5px" }}>Москва</div>
+                <div style={{ fontSize: 13, opacity: 0.85, marginTop: 4 }}>Новый филиал</div>
+              </div>
+              <div style={{ padding: "24px 28px" }}>
+                <div style={{ fontSize: 14, color: "var(--gray)", lineHeight: 1.8 }}>
+                  <div>📌 Адрес уточняется</div>
+                  <div>🕐 Пн–Сб: 10:00 – 18:00</div>
+                  <div>📞 По Telegram</div>
+                </div>
+                <a href="/moscow" className="btn-cta" style={{ display: "inline-block", marginTop: 20, background: "var(--dark)", color: "white", fontSize: 13 }}>
+                  Перейти на страницу →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* НАША МАСТЕРСКАЯ */}
+        <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Наша мастерская</h2>
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Профессиональное оборудование и опытные мастера</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, maxWidth: 960, margin: "0 auto 48px" }}>
+            {[
+              { icon: "🔧", title: "10+ лет опыта", desc: "Работаем с 2013 года, тысячи довольных клиентов" },
+              { icon: "⚡", title: "Ремонт за час", desc: "Большинство работ выполняем прямо при вас" },
+              { icon: "🔬", title: "Проф. оборудование", desc: "Современное оборудование для точной работы с линзами" },
+              { icon: "✅", title: "Гарантия на работу", desc: "Даём гарантию на каждую выполненную работу" },
+            ].map((item) => (
+              <div key={item.title} style={{ textAlign: "center", padding: "28px 20px", borderRadius: 18, background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)" }}>
+                <div style={{ fontSize: 40, marginBottom: 14 }}>{item.icon}</div>
+                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, letterSpacing: "-0.3px" }}>{item.title}</div>
+                <div style={{ fontSize: 13, color: "var(--gray)", lineHeight: 1.6 }}>{item.desc}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12, maxWidth: 700, margin: "0 auto", borderRadius: 20, overflow: "hidden" }}>
+            <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/d84de801-f02b-47c1-8ceb-184f8320f6ce.jpg" alt="Мастерская" style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 16 }} />
+            <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/5f1d99da-f588-4d48-9de5-2edcc11beccd.jpg" alt="Мастерская" style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 16 }} />
+          </div>
+        </section>
+
         <ContactForm />
 
         <section className="section-padding" style={{ paddingTop: "0" }}>
