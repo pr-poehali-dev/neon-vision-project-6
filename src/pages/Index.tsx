@@ -93,8 +93,105 @@ function ContactForm() {
   );
 }
 
+const SERVICES = [
+  {
+    name: "Ремонт оправы",
+    price: "от 500 ₽",
+    desc: "Пайка, замена винтов, носоупоры, дужки",
+    tag: "Срочно",
+    image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=600&q=80",
+    details: "Восстановим оправу любой сложности — пайка металла, замена винтиков, носоупоров и дужек. Большинство работ выполняем при вас за 30–60 минут.",
+    options: [
+      { label: "Замена носоупоров", price: "500 ₽" },
+      { label: "Замена винтов", price: "500 ₽" },
+      { label: "Пайка дужки", price: "от 700 ₽" },
+      { label: "Замена дужки", price: "от 800 ₽" },
+    ],
+  },
+  {
+    name: "Замена линз",
+    price: "от 1 200 ₽",
+    desc: "Линзы по рецепту, антиблик, UV-защита",
+    tag: "Популярно",
+    image: "https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?w=600&q=80",
+    details: "Изготавливаем линзы по вашему рецепту. Широкий выбор покрытий: антибликовое, UV-защита, фотохромные, голубой фильтр.",
+    options: [
+      { label: "Однофокальные", price: "от 1 200 ₽" },
+      { label: "Бифокальные", price: "от 2 500 ₽" },
+      { label: "Прогрессивные", price: "от 4 000 ₽" },
+      { label: "С антибликом", price: "+500 ₽" },
+    ],
+  },
+  {
+    name: "Очки на заказ",
+    price: "от 2 500 ₽",
+    desc: "Подбор оправы + изготовление под рецепт",
+    tag: null,
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80",
+    details: "Поможем подобрать оправу из нашего каталога и изготовим линзы по рецепту врача. Готовые очки — в течение 1–3 дней.",
+    options: [
+      { label: "Оправа + однофокальные линзы", price: "от 2 500 ₽" },
+      { label: "Оправа + прогрессивные линзы", price: "от 6 000 ₽" },
+      { label: "Детские очки", price: "от 2 000 ₽" },
+      { label: "Солнцезащитные с диоптриями", price: "от 3 500 ₽" },
+    ],
+  },
+  {
+    name: "Очистка очков",
+    price: "Бесплатно",
+    desc: "Профессиональная чистка линз и оправы",
+    tag: null,
+    image: "https://images.unsplash.com/photo-1586892478025-2b5472316994?w=600&q=80",
+    details: "Профессиональная ультразвуковая очистка очков. Удаляем загрязнения, жировые следы и налёт с линз и оправы.",
+    options: [
+      { label: "Ультразвуковая очистка", price: "Бесплатно" },
+      { label: "Полировка линз", price: "от 300 ₽" },
+      { label: "Обработка антизапотевателем", price: "от 200 ₽" },
+    ],
+  },
+  {
+    name: "Регулировка очков",
+    price: "от 200 ₽",
+    desc: "Подгонка по форме лица, натяжка дужек",
+    tag: null,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    details: "Отрегулируем очки точно по форме вашего лица — выровняем дужки, подберём посадку, чтобы очки сидели удобно.",
+    options: [
+      { label: "Регулировка дужек", price: "200 ₽" },
+      { label: "Подгонка носоупоров", price: "200 ₽" },
+      { label: "Полная регулировка", price: "400 ₽" },
+    ],
+  },
+  {
+    name: "Замена стёкол",
+    price: "от 800 ₽",
+    desc: "Вставка стёкол в готовую оправу",
+    tag: null,
+    image: "https://images.unsplash.com/photo-1543791738-cb963b524bdb?w=600&q=80",
+    details: "Вставим готовые стёкла в вашу оправу. Работаем с пластиковыми, металлическими и безободковыми оправами.",
+    options: [
+      { label: "Пластиковая оправа", price: "от 800 ₽" },
+      { label: "Металлическая оправа", price: "от 900 ₽" },
+      { label: "Безободковая оправа", price: "от 1 200 ₽" },
+    ],
+  },
+  {
+    name: "Курьер для юр. лиц",
+    price: "Бесплатно",
+    desc: "Забираем и привозим очки — бесплатно для организаций",
+    tag: "Юр. лица",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+    details: "Для организаций и компаний — выезжаем к вам, забираем очки сотрудников, ремонтируем и возвращаем. Без лишних поездок.",
+    options: [
+      { label: "Выезд курьера", price: "Бесплатно" },
+      { label: "Корпоративный договор", price: "По запросу" },
+    ],
+  },
+];
+
 export default function Index() {
   const { open } = useLocationModal();
+  const [openService, setOpenService] = useState<string | null>(null);
   return (
     <>
       <header className="header">
@@ -344,26 +441,57 @@ export default function Index() {
         {/* ЦЕНЫ */}
         <section id="prices" className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Цены</h2>
-          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Прозрачные цены без скрытых доплат</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, maxWidth: 900, margin: "0 auto" }}>
-            {[
-              { name: "Ремонт оправы", price: "от 500 ₽", desc: "Пайка, замена винтов, носоупоры, дужки", tag: "Срочно" },
-              { name: "Замена линз", price: "от 1 200 ₽", desc: "Линзы по рецепту, антиблик, UV-защита", tag: "Популярно" },
-              { name: "Очки на заказ", price: "от 2 500 ₽", desc: "Подбор оправы + изготовление под рецепт", tag: null },
-              { name: "Очистка очков", price: "Бесплатно", desc: "Профессиональная чистка линз и оправы", tag: null },
-              { name: "Регулировка очков", price: "от 200 ₽", desc: "Подгонка по форме лица, натяжка дужек", tag: null },
-              { name: "Замена стёкол", price: "от 800 ₽", desc: "Вставка стёкол в готовую оправу", tag: null },
-              { name: "Курьер для юр. лиц", price: "Бесплатно", desc: "Забираем и привозим очки обратно — бесплатно для организаций", tag: "Юр. лица" },
-            ].map((item) => (
-              <div key={item.name} style={{ borderRadius: 16, padding: "24px 26px", background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)", position: "relative", transition: "box-shadow 0.3s", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-                {item.tag && (
-                  <span style={{ position: "absolute", top: 16, right: 16, background: "var(--primary)", color: "white", fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 980 }}>{item.tag}</span>
-                )}
-                <div style={{ fontSize: 22, fontWeight: 700, color: "var(--primary)", marginBottom: 6, letterSpacing: "-0.5px" }}>{item.price}</div>
-                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 6, letterSpacing: "-0.3px" }}>{item.name}</div>
-                <div style={{ fontSize: 13, color: "var(--gray)", lineHeight: 1.5 }}>{item.desc}</div>
-              </div>
-            ))}
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Прозрачные цены без скрытых доплат — нажмите на услугу</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 720, margin: "0 auto" }}>
+            {SERVICES.map((item) => {
+              const isOpen = openService === item.name;
+              return (
+                <div key={item.name} style={{ borderRadius: 18, overflow: "hidden", border: "1px solid rgba(0,0,0,0.08)", boxShadow: isOpen ? "0 6px 32px rgba(0,0,0,0.10)" : "0 2px 8px rgba(0,0,0,0.04)", transition: "box-shadow 0.3s" }}>
+                  {/* Шапка карточки */}
+                  <button
+                    onClick={() => setOpenService(isOpen ? null : item.name)}
+                    style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 24px", background: isOpen ? "var(--primary)" : "var(--bg)", border: "none", cursor: "pointer", textAlign: "left", transition: "background 0.25s" }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: 16, flex: 1 }}>
+                      <div>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 2 }}>
+                          <span style={{ fontSize: 16, fontWeight: 700, color: isOpen ? "white" : "var(--dark)", letterSpacing: "-0.3px" }}>{item.name}</span>
+                          {item.tag && (
+                            <span style={{ background: isOpen ? "rgba(255,255,255,0.25)" : "var(--primary)", color: "white", fontSize: 10, fontWeight: 600, padding: "2px 8px", borderRadius: 980 }}>{item.tag}</span>
+                          )}
+                        </div>
+                        <div style={{ fontSize: 13, color: isOpen ? "rgba(255,255,255,0.75)" : "var(--gray)" }}>{item.desc}</div>
+                      </div>
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
+                      <span style={{ fontSize: 17, fontWeight: 700, color: isOpen ? "white" : "var(--primary)" }}>{item.price}</span>
+                      <span style={{ fontSize: 20, color: isOpen ? "white" : "var(--gray)", transition: "transform 0.25s", display: "inline-block", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}>⌄</span>
+                    </div>
+                  </button>
+
+                  {/* Раскрывающееся содержимое */}
+                  {isOpen && (
+                    <div style={{ background: "white" }}>
+                      <img src={item.image} alt={item.name} style={{ width: "100%", height: 180, objectFit: "cover", display: "block" }} />
+                      <div style={{ padding: "20px 24px 24px" }}>
+                        <p style={{ fontSize: 14, color: "var(--gray)", lineHeight: 1.7, marginBottom: 20 }}>{item.details}</p>
+                        <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
+                          {item.options.map((opt) => (
+                            <div key={opt.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 14px", borderRadius: 10, background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)" }}>
+                              <span style={{ fontSize: 14, color: "var(--dark)" }}>{opt.label}</span>
+                              <span style={{ fontSize: 14, fontWeight: 700, color: "var(--primary)", whiteSpace: "nowrap", marginLeft: 12 }}>{opt.price}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ display: "block", textAlign: "center", background: "var(--primary)", color: "white", padding: "13px 24px", fontSize: 15 }}>
+                          Записаться
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
 
