@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Moscow from "./pages/Moscow";
 import NotFound from "./pages/NotFound";
+import LocationModal from "./components/LocationModal";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <LocationModal />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/moscow" element={<Moscow />} />
