@@ -384,12 +384,28 @@ export default function Index() {
 
         <section id="about" className="retro-vibe">
           <div>
-            <h2 className="vibe-title">Мастера своего дела.</h2>
+            <h2 className="vibe-title">Мастерская полного цикла.</h2>
             <p className="vibe-text">
-              Более 10 лет изготавливаем и ремонтируем очки в Якутске. Работаем аккуратно, бережно, на профессиональном оборудовании и даём гарантию на каждую нашу работу. В нашей мастерской вы можете изготовить очки по вашему рецепту. Мы ценим ваше время.
+              Мы не просто ремонтируем очки — мы создаём комфортное зрение для каждого клиента. Более 10 лет опыта, современное оборудование и гарантия качества на каждую выполненную работу.
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, margin: "20px 0 28px", display: "flex", flexDirection: "column", gap: 8 }}>
+              {[
+                "Срочное изготовление очков",
+                "Установка линз в оправу клиента",
+                "Ремонт оправ любой сложности",
+                "Детские линзы против миопии",
+                "Профессиональная диагностика и сервис",
+              ].map(item => (
+                <li key={item} style={{ color: "rgba(255,255,255,0.9)", fontSize: 15, display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ color: "var(--accent)", fontSize: 18 }}>◆</span> {item}
+                </li>
+              ))}
+            </ul>
+            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, marginBottom: 24, fontWeight: 600, letterSpacing: 1 }}>
+              БЫСТРО. ТОЧНО. НАДЁЖНО.
             </p>
             <button className="btn-cta" style={{ background: "white", color: "var(--primary)" }}>
-              О мастерской
+              Записаться
             </button>
           </div>
           <div className="vibe-img"></div>
