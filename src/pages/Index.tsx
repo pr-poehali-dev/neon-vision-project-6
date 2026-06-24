@@ -29,59 +29,59 @@ function ContactForm() {
   };
 
   return (
-    <section className="section-padding" style={{ background: "var(--cream)" }}>
-      <div style={{ maxWidth: 560, margin: "0 auto" }}>
-        <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>ОСТАВИТЬ ЗАЯВКУ</h2>
-        <p style={{ textAlign: "center", color: "#666", marginBottom: 32 }}>
+    <section className="section-padding" style={{ background: "var(--bg-section)" }}>
+      <div style={{ maxWidth: 520, margin: "0 auto" }}>
+        <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Оставить заявку</h2>
+        <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 36, fontSize: 16, lineHeight: 1.6 }}>
           Опишите проблему — мы свяжемся с вами в Telegram или по телефону
         </p>
         {status === "success" ? (
-          <div style={{ textAlign: "center", padding: "40px 20px", border: "3px solid var(--dark)", borderRadius: 12, background: "white", boxShadow: "5px 5px 0 var(--dark)" }}>
-            <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
-            <h3 style={{ fontWeight: 800, fontSize: 22, marginBottom: 8 }}>Заявка отправлена!</h3>
-            <p style={{ color: "#666" }}>Мы свяжемся с вами в ближайшее время.</p>
-            <button className="btn-cta" style={{ marginTop: 24, background: "var(--primary)", color: "white" }} onClick={() => setStatus("idle")}>Отправить ещё</button>
+          <div style={{ textAlign: "center", padding: "48px 24px", borderRadius: 20, background: "white", boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}>
+            <div style={{ fontSize: 52, marginBottom: 16 }}>✅</div>
+            <h3 style={{ fontWeight: 600, fontSize: 22, marginBottom: 8, letterSpacing: "-0.5px" }}>Заявка отправлена!</h3>
+            <p style={{ color: "var(--gray)", marginBottom: 24 }}>Мы свяжемся с вами в ближайшее время.</p>
+            <button className="btn-cta" style={{ background: "var(--primary)", color: "white" }} onClick={() => setStatus("idle")}>Отправить ещё</button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16, background: "white", padding: 32, border: "3px solid var(--dark)", borderRadius: 12, boxShadow: "5px 5px 0 var(--dark)" }}>
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 14, background: "white", padding: 32, borderRadius: 20, boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}>
             <div>
-              <label style={{ fontWeight: 700, fontSize: 13, textTransform: "uppercase", letterSpacing: 1, display: "block", marginBottom: 6 }}>Ваше имя *</label>
+              <label style={{ fontWeight: 500, fontSize: 13, color: "var(--gray)", display: "block", marginBottom: 6 }}>Ваше имя</label>
               <input
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
                 placeholder="Иван"
                 required
-                style={{ width: "100%", padding: "12px 16px", border: "2px solid var(--dark)", borderRadius: 8, fontSize: 16, fontFamily: "inherit", outline: "none", boxSizing: "border-box" }}
+                style={{ width: "100%", padding: "12px 16px", border: "1px solid rgba(0,0,0,0.12)", borderRadius: 12, fontSize: 16, fontFamily: "inherit", outline: "none", boxSizing: "border-box", transition: "border 0.2s" }}
               />
             </div>
             <div>
-              <label style={{ fontWeight: 700, fontSize: 13, textTransform: "uppercase", letterSpacing: 1, display: "block", marginBottom: 6 }}>Телефон *</label>
+              <label style={{ fontWeight: 500, fontSize: 13, color: "var(--gray)", display: "block", marginBottom: 6 }}>Телефон</label>
               <input
                 type="tel"
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
                 placeholder="+7 914 000-00-00"
                 required
-                style={{ width: "100%", padding: "12px 16px", border: "2px solid var(--dark)", borderRadius: 8, fontSize: 16, fontFamily: "inherit", outline: "none", boxSizing: "border-box" }}
+                style={{ width: "100%", padding: "12px 16px", border: "1px solid rgba(0,0,0,0.12)", borderRadius: 12, fontSize: 16, fontFamily: "inherit", outline: "none", boxSizing: "border-box" }}
               />
             </div>
             <div>
-              <label style={{ fontWeight: 700, fontSize: 13, textTransform: "uppercase", letterSpacing: 1, display: "block", marginBottom: 6 }}>Что случилось с очками?</label>
+              <label style={{ fontWeight: 500, fontSize: 13, color: "var(--gray)", display: "block", marginBottom: 6 }}>Что случилось с очками?</label>
               <textarea
                 value={comment}
                 onChange={e => setComment(e.target.value)}
                 placeholder="Сломалась дужка, нужна замена линз..."
                 rows={3}
-                style={{ width: "100%", padding: "12px 16px", border: "2px solid var(--dark)", borderRadius: 8, fontSize: 16, fontFamily: "inherit", outline: "none", resize: "vertical", boxSizing: "border-box" }}
+                style={{ width: "100%", padding: "12px 16px", border: "1px solid rgba(0,0,0,0.12)", borderRadius: 12, fontSize: 16, fontFamily: "inherit", outline: "none", resize: "vertical", boxSizing: "border-box" }}
               />
             </div>
-            {status === "error" && <p style={{ color: "red", fontSize: 14 }}>Ошибка отправки. Попробуйте ещё раз или напишите нам в Telegram.</p>}
+            {status === "error" && <p style={{ color: "#ff3b30", fontSize: 14 }}>Ошибка отправки. Попробуйте ещё раз или напишите нам в Telegram.</p>}
             <button
               type="submit"
               className="btn-cta"
               disabled={status === "loading"}
-              style={{ background: "var(--primary)", color: "white", width: "100%", opacity: status === "loading" ? 0.7 : 1 }}
+              style={{ background: "var(--primary)", color: "white", width: "100%", padding: "14px", fontSize: 16, borderRadius: 12, marginTop: 4, opacity: status === "loading" ? 0.7 : 1 }}
             >
               {status === "loading" ? "Отправляю..." : "Отправить заявку"}
             </button>
@@ -95,22 +95,20 @@ function ContactForm() {
 export default function Index() {
   return (
     <>
-      <div className="grain-overlay" />
-
       <header className="header">
-        <div className="logo">ОЧКИ*ПЛЮС</div>
+        <div className="logo">Очки Плюс</div>
         <nav>
           <a href="#">Услуги</a>
           <a href="#">О нас</a>
           <a href="#">Галерея</a>
           <a href="#">Контакты</a>
-          <a href="/" style={{ color: "var(--secondary)", fontWeight: 800 }}>📍 Якутск</a>
-          <a href="/moscow" style={{ color: "var(--primary)", fontWeight: 800 }}>📍 Москва</a>
+          <a href="/" style={{ color: "var(--primary)" }}>📍 Якутск</a>
+          <a href="/moscow" style={{ color: "var(--gray)" }}>📍 Москва</a>
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <a href="/" className="btn-cta" style={{ background: "#0369a1", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 80, textAlign: "center", display: "inline-block" }}>📍 Якутск</a>
-          <a href="/moscow" className="btn-cta" style={{ background: "#0ea5e9", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 80, textAlign: "center", display: "inline-block" }}>📍 Москва</a>
-          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "#075985", color: "white", fontSize: 11, padding: 0, height: 36, lineHeight: "36px", minWidth: 100, textAlign: "center", display: "inline-block" }}>Записаться</a>
+          <a href="/" className="btn-cta" style={{ background: "rgba(0,113,227,0.12)", color: "var(--primary)", fontSize: 12 }}>📍 Якутск</a>
+          <a href="/moscow" className="btn-cta" style={{ background: "rgba(0,0,0,0.06)", color: "var(--dark)", fontSize: 12 }}>📍 Москва</a>
+          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 12 }}>Записаться</a>
         </div>
       </header>
 
@@ -118,18 +116,18 @@ export default function Index() {
         <section className="hero">
           <div className="hero-content">
             <h1 className="hero-title">
-              СРОЧНОЕ ИЗГОТОВЛЕНИЕ
+              Срочное изготовление
               <br />
-              И РЕМОНТ ОЧКОВ <span>ЗА ЧАС</span>
+              и ремонт очков <span>за час</span>
             </h1>
-            <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed text-[#555]">
-              Более 10 лет изготавливаем и ремонтируем очки в Якутске. Очки по рецепту, большой выбор линз, гарантия на каждую работу. Мы ценим ваше время.
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--gray)", marginBottom: 32, maxWidth: 420, fontWeight: 400 }}>
+              Более 10 лет изготавливаем и ремонтируем очки в Якутске. Очки по рецепту, большой выбор линз, гарантия на каждую работу.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "#075985", color: "white" }}>
-                Записаться на ремонт
+            <div style={{ display: "flex", flexDirection: "row", gap: 12, flexWrap: "wrap" }}>
+              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 15, padding: "12px 24px" }}>
+                Записаться
               </a>
-              <button className="btn-cta" style={{ background: "white", color: "#0c1a2e" }}>
+              <button className="btn-cta" style={{ background: "rgba(0,0,0,0.07)", color: "var(--dark)", fontSize: 15, padding: "12px 24px" }}>
                 Услуги и цены
               </button>
             </div>
@@ -158,13 +156,12 @@ export default function Index() {
 
         <section className="section-padding">
           <div className="section-header">
-            <h2 className="section-title">НАШИ УСЛУГИ</h2>
+            <h2 className="section-title">Наши услуги</h2>
             <a
               href="#"
-              className="text-sm md:text-base"
-              style={{ color: "var(--dark)", fontWeight: 800, textTransform: "uppercase" }}
+              style={{ color: "var(--primary)", fontWeight: 500, fontSize: 15 }}
             >
-              Все цены
+              Все цены →
             </a>
           </div>
 
@@ -250,29 +247,29 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="section-padding" style={{ background: "white" }}>
-          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 32 }}>ДОПОЛНИТЕЛЬНО</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20, maxWidth: 800, margin: "0 auto" }}>
-            <div style={{ border: "3px solid var(--dark)", borderRadius: 12, padding: 28, boxShadow: "5px 5px 0 var(--dark)", background: "var(--bg)" }}>
-              <div style={{ fontSize: 40, marginBottom: 12 }}>🏢</div>
-              <h3 style={{ fontWeight: 900, fontSize: 18, textTransform: "uppercase", marginBottom: 10 }}>Работаем с юр. лицами</h3>
-              <p style={{ color: "#555", fontSize: 14, lineHeight: 1.6 }}>Заключаем договоры, выставляем счета и предоставляем все необходимые документы для бухгалтерии.</p>
+        <section className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
+          <h2 className="section-title" style={{ textAlign: "center", marginBottom: 40 }}>Дополнительно</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20, maxWidth: 800, margin: "0 auto" }}>
+            <div style={{ borderRadius: 18, padding: 32, background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
+              <div style={{ fontSize: 42, marginBottom: 16 }}>🏢</div>
+              <h3 style={{ fontWeight: 600, fontSize: 18, marginBottom: 10, letterSpacing: "-0.3px" }}>Работаем с юр. лицами</h3>
+              <p style={{ color: "var(--gray)", fontSize: 14, lineHeight: 1.7 }}>Заключаем договоры, выставляем счета и предоставляем все необходимые документы для бухгалтерии.</p>
             </div>
-            <div style={{ border: "3px solid var(--dark)", borderRadius: 12, padding: 28, boxShadow: "5px 5px 0 var(--dark)", background: "var(--bg)" }}>
-              <div style={{ fontSize: 40, marginBottom: 12 }}>💳</div>
-              <h3 style={{ fontWeight: 900, fontSize: 18, textTransform: "uppercase", marginBottom: 10 }}>Любая форма оплаты</h3>
-              <p style={{ color: "#555", fontSize: 14, lineHeight: 1.6 }}>Принимаем наличные, карты, безналичный расчёт и оплату по счёту для организаций.</p>
+            <div style={{ borderRadius: 18, padding: 32, background: "var(--bg)", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
+              <div style={{ fontSize: 42, marginBottom: 16 }}>💳</div>
+              <h3 style={{ fontWeight: 600, fontSize: 18, marginBottom: 10, letterSpacing: "-0.3px" }}>Любая форма оплаты</h3>
+              <p style={{ color: "var(--gray)", fontSize: 14, lineHeight: 1.7 }}>Принимаем наличные, карты, безналичный расчёт и оплату по счёту для организаций.</p>
             </div>
           </div>
         </section>
 
         <section className="retro-vibe">
           <div>
-            <h2 className="vibe-title">МАСТЕРА СВОЕГО ДЕЛА.</h2>
+            <h2 className="vibe-title">Мастера своего дела.</h2>
             <p className="vibe-text">
-              Более 10 лет изготавливаем и ремонтируем очки в Якутске. Работаем аккуратно, бережно, на профессиональном оборудовании и даём гарантию на каждую нашу работу. В нашей мастерской вы можете изготовить очки по вашему рецепту — большое количество линз в наличии и на заказ. Приходите к нам. Мы ценим ваше время.
+              Более 10 лет изготавливаем и ремонтируем очки в Якутске. Работаем аккуратно, бережно, на профессиональном оборудовании и даём гарантию на каждую нашу работу. В нашей мастерской вы можете изготовить очки по вашему рецепту. Мы ценим ваше время.
             </p>
-            <button className="btn-cta" style={{ background: "var(--dark)", color: "white", borderColor: "white" }}>
+            <button className="btn-cta" style={{ background: "white", color: "var(--primary)" }}>
               О мастерской
             </button>
           </div>
@@ -281,7 +278,7 @@ export default function Index() {
 
         <section className="section-padding">
           <h2 className="section-title" style={{ marginBottom: "40px", textAlign: "center" }}>
-            НАШИ РАБОТЫ
+            Наши работы
           </h2>
           <div className="social-grid">
             <div className="social-item">
@@ -314,13 +311,13 @@ export default function Index() {
         <ContactForm />
 
         <section className="section-padding" style={{ paddingTop: "0" }}>
-          <h2 className="section-title" style={{ marginBottom: "24px", textAlign: "center" }}>
-            КАК НАС НАЙТИ
+          <h2 className="section-title" style={{ marginBottom: "12px", textAlign: "center" }}>
+            Как нас найти
           </h2>
-          <p style={{ textAlign: "center", marginBottom: "32px", color: "#666", fontSize: "16px" }}>
+          <p style={{ textAlign: "center", marginBottom: "32px", color: "var(--gray)", fontSize: "16px" }}>
             г. Якутск, ул. Орджоникидзе, 20, каб. 207
           </p>
-          <div style={{ borderRadius: "12px", overflow: "hidden", border: "3px solid var(--dark)", boxShadow: "6px 6px 0 var(--dark)" }}>
+          <div style={{ borderRadius: 20, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.1)" }}>
             <iframe
               src="https://yandex.ru/map-widget/v1/?text=Якутск+ул+Орджоникидзе+20&z=16&l=map"
               width="100%"
@@ -336,8 +333,8 @@ export default function Index() {
 
       <footer>
         <div>
-          <div className="footer-logo">ОЧКИ*ПЛЮС</div>
-          <p style={{ color: "#666", lineHeight: 1.6 }}>
+          <div className="footer-logo">Очки Плюс</div>
+          <p style={{ color: "var(--gray)", lineHeight: 1.6, fontSize: 14 }}>
             Срочный ремонт и изготовление очков в Якутске. Возвращаем чёткость взгляда с заботой и гарантией.
           </p>
         </div>
