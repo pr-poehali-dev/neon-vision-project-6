@@ -380,7 +380,7 @@ export default function Index() {
           <div className="section-header">
             <h2 className="section-title">Наши услуги</h2>
             <a
-              href="#"
+              href="#prices"
               style={{ color: "var(--primary)", fontWeight: 500, fontSize: 15 }}
             >
               Все цены →
