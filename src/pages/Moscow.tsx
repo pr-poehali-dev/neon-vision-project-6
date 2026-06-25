@@ -15,6 +15,7 @@ export default function Moscow() {
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <button onClick={open} className="btn-cta" style={{ background: "rgba(0,113,227,0.12)", color: "var(--primary)", fontSize: 12, border: "none" }}>📍 Москва</button>
+          <a href="tel:+79141160007" className="btn-cta" style={{ background: "rgba(0,113,227,0.12)", color: "var(--primary)", fontSize: 12 }}>📞 Позвонить</a>
           <a href="#contacts" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 12 }}>Записаться</a>
         </div>
       </header>
