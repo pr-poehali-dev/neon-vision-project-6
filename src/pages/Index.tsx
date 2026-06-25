@@ -270,6 +270,7 @@ function FloatingActions() {
     { icon: "📞", label: "Позвонить", href: "tel:+79141160007" },
     { icon: "💬", label: "WhatsApp", href: "https://wa.me/79141160007" },
     { icon: "✈️", label: "Telegram", href: "https://t.me/+79141160007" },
+    { icon: "🟡", label: "Max", href: "https://max.ru/u/f9LHodD0cOJXixrdgIwyhnATPlHIQQinFL_hafoPJ1Fob2MlqyUIjH2x2Yw" },
     { icon: "📋", label: "Заказать звонок", href: "#contacts", scroll: true },
     { icon: "📍", label: "Маршрут", href: "https://2gis.ru/yakutsk/search/Очки Плюс" },
   ];
@@ -799,8 +800,8 @@ export default function Index() {
               </a>
             </li>
             <li>
-              <a href="https://maxim-messenger.com" target="_blank" rel="noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
-                🟡 Мессенджер Макс
+              <a href="https://max.ru/u/f9LHodD0cOJXixrdgIwyhnATPlHIQQinFL_hafoPJ1Fob2MlqyUIjH2x2Yw" target="_blank" rel="noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                🟡 Max
               </a>
             </li>
             <li>
