@@ -15,7 +15,7 @@ export default function Moscow() {
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <button onClick={open} className="btn-cta" style={{ background: "rgba(0,113,227,0.12)", color: "var(--primary)", fontSize: 12, border: "none" }}>📍 Москва</button>
-          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 12 }}>Записаться</a>
+          <a href="#contacts" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 12 }}>Записаться</a>
         </div>
       </header>
 
@@ -34,7 +34,7 @@ export default function Moscow() {
               Мастерская «Очки Плюс» открывает филиал в Москве. Тот же уровень качества и скорости — уже скоро в вашем городе.
             </p>
             <div style={{ display: "flex", flexDirection: "row", gap: 12, flexWrap: "wrap" }}>
-              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 15, padding: "12px 24px" }}>
+              <a href="#contacts" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 15, padding: "12px 24px" }}>
                 Узнать об открытии
               </a>
               <a href="/" className="btn-cta" style={{ background: "rgba(0,0,0,0.07)", color: "var(--dark)", fontSize: 15, padding: "12px 24px" }}>
@@ -110,7 +110,7 @@ export default function Moscow() {
             <p className="vibe-text">
               За 10 лет работы в Якутске мы отточили каждый процесс. Теперь открываем филиал в Москве — с тем же оборудованием, теми же стандартами и той же скоростью.
             </p>
-            <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "white", color: "var(--primary)", display: "inline-block" }}>
+            <a href="#contacts" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "white", color: "var(--primary)", display: "inline-block" }}>
               Написать в Telegram
             </a>
           </div>
@@ -145,7 +145,7 @@ export default function Moscow() {
               Напишите нам в Telegram — мы сообщим, как только московский филиал откроет двери.
             </p>
             <a
-              href="https://t.me/+79141160007"
+              href="#contacts"
               target="_blank"
               rel="noreferrer"
               className="btn-cta"
@@ -179,7 +179,7 @@ export default function Moscow() {
         <div className="footer-links">
           <h4>Контакты</h4>
           <ul>
-            <li><a href="https://t.me/+79141160007" style={{ color: "inherit", textDecoration: "none" }}>Telegram</a></li>
+            <li><a href="#contacts" style={{ color: "inherit", textDecoration: "none" }}>Telegram</a></li>
             <li><a href="tel:+79141160007" style={{ color: "inherit", textDecoration: "none" }}>+7 914 116-00-07</a></li>
           </ul>
         </div>

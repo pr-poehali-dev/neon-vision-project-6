@@ -329,7 +329,7 @@ export default function Index() {
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <button onClick={open} className="btn-cta" style={{ background: "rgba(0,113,227,0.12)", color: "var(--primary)", fontSize: 12, border: "none" }}>📍 Якутск</button>
-          <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 12 }}>Записаться</a>
+          <a href="#contacts" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 12 }}>Записаться</a>
         </div>
       </header>
 
@@ -345,7 +345,7 @@ export default function Index() {
               Оптическая мастерская в Якутске — срочное изготовление очков по рецепту, замена линз, ремонт оправ любой сложности. Более 10 лет опыта, гарантия на каждую работу.
             </p>
             <div style={{ display: "flex", flexDirection: "row", gap: 12, flexWrap: "wrap" }}>
-              <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 15, padding: "12px 24px" }}>
+              <a href="#contacts" className="btn-cta" style={{ background: "var(--primary)", color: "white", fontSize: 15, padding: "12px 24px" }}>
                 Записаться
               </a>
               <button onClick={() => document.getElementById("prices")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta" style={{ background: "rgba(0,0,0,0.07)", color: "var(--dark)", fontSize: 15, padding: "12px 24px" }}>
@@ -506,7 +506,7 @@ export default function Index() {
             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, marginBottom: 24, fontWeight: 600, letterSpacing: 1 }}>
               БЫСТРО. ТОЧНО. НАДЁЖНО.
             </p>
-            <a href="https://t.me/+79141160007" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "white", color: "var(--primary)", display: "inline-block" }}>
+            <a href="#contacts" className="btn-cta" style={{ background: "white", color: "var(--primary)", display: "inline-block" }}>
               Записаться
             </a>
           </div>
