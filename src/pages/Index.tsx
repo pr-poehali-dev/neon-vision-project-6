@@ -530,7 +530,7 @@ export default function Index() {
                 Под ключ
               </span>
               <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/60e46d97-41ed-4613-8f88-442fa30a06d0.jpg"
+                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/af9ba643-2227-47b0-bb26-237babb13582.png"
                 alt="Очки на заказ"
               />
               <div className="menu-card-body">
