@@ -589,7 +589,7 @@ export default function Index() {
               ))}
             </ul>
             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, marginBottom: 24, fontWeight: 600, letterSpacing: 1 }}>
-              БЫСТРО. ТОЧНО. НАДЁЖНО.
+              БЫСТРО. ТОЧНО. НАДЁЖНО. МЫ ДЕЛАЕМ ВАШ ВЗГЛЯД ЯРКИМ.
             </p>
             <a href="#contacts" className="btn-cta" style={{ background: "white", color: "var(--primary)", display: "inline-block" }}>
               Записаться
