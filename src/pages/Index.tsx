@@ -175,10 +175,12 @@ const SERVICES = [
     image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/e7e62ffa-13aa-4eac-af86-4a5be2c361bc.png",
     details: "Изготавливаем линзы по вашему рецепту. Широкий выбор покрытий: антибликовое, UV-защита, фотохромные, Blue blocker.",
     options: [
-      { label: "Однофокальные", price: "от 1 200 ₽" },
-      { label: "Бифокальные", price: "от 2 500 ₽" },
-      { label: "Прогрессивные", price: "от 4 000 ₽" },
-      { label: "С антибликом", price: "+500 ₽" },
+      { label: "Линзы без покрытия", price: "от 300 ₽" },
+      { label: "Линзы с антибликовым покрытием НМС", price: "от 450 ₽" },
+      { label: "Прогрессивные", price: "от 1 500 ₽" },
+      { label: "Бифокальные", price: "от 600 ₽" },
+      { label: "Линзы фотохром", price: "от 1 200 ₽" },
+      { label: "Stellest", price: "по запросу" },
     ],
   },
 
