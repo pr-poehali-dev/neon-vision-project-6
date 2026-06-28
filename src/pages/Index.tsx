@@ -154,7 +154,7 @@ const SERVICES = [
     price: "от 500 ₽",
     desc: "Пайка, замена винтов, носоупоры, дужки",
     tag: "Срочно",
-    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/7152e9f6-0c1e-4107-ba7f-41291ec29d23.png",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/e7e62ffa-13aa-4eac-af86-4a5be2c361bc.png",
     details: "Восстановим оправу любой сложности — пайка металла, замена винтиков, носоупоров и дужек. Большинство работ выполняем при вас за 30–60 минут.",
     options: [
       { label: "Пайка титановых оправ", price: "от 500 ₽" },
@@ -172,7 +172,7 @@ const SERVICES = [
     price: "от 1 200 ₽",
     desc: "Линзы по рецепту, антиблик, UV-защита",
     tag: "Популярно",
-    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/e7e62ffa-13aa-4eac-af86-4a5be2c361bc.png",
+    image: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/7152e9f6-0c1e-4107-ba7f-41291ec29d23.png",
     details: "Изготавливаем линзы по вашему рецепту. Широкий выбор покрытий: антибликовое, UV-защита, фотохромные, голубой фильтр.",
     options: [
       { label: "Однофокальные", price: "от 1 200 ₽" },
