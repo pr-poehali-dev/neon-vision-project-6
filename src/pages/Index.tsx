@@ -599,6 +599,8 @@ export default function Index() {
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/16503f70-e163-4a92-952c-7ef8c8981b78.png", alt: "Работа мастерской" },
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/23c21043-ca62-429b-a944-4c1d416df996.jpg", alt: "Работа мастерской" },
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/1bfaf060-2d73-4d24-ade0-628d06b0ab27.jpg", alt: "Работа мастерской" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/97d24c69-1356-4a26-879d-27ba40ee4b7f.png", alt: "Ремонт оправы в мастерской" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/0f437c33-d1e9-4294-bdd6-d43af38cbd2f.png", alt: "Замена линз в мастерской" },
             ].map((img, i) => (
               <div key={i} style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", aspectRatio: "4/3" }}>
                 <img src={img.src} alt={img.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
