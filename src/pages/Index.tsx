@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocationModal } from "@/components/LocationModal";
 
 const SEND_URL = "https://functions.poehali.dev/628efe3f-9fea-498f-8213-c50b009e9e11";
+const REVIEWS_URL = "https://functions.poehali.dev/81b50380-2ffc-4ea5-a252-373c79e4aea0";
 
 function ContactForm() {
   const [name, setName] = useState("");
@@ -309,6 +310,88 @@ function FloatingActions() {
       >
         {expanded ? "✕" : "📞"}
       </button>
+    </div>
+  );
+}
+
+function ReviewForm() {
+  const [name, setName] = useState("");
+  const [text, setText] = useState("");
+  const [stars, setStars] = useState(5);
+  const [hover, setHover] = useState(0);
+  const [status, setStatus] = useState<"idle"|"loading"|"success"|"error">("idle");
+  const [dbReviews, setDbReviews] = useState<{id:number,name:string,text:string,stars:number,date:string}[]>([]);
+
+  useEffect(() => {
+    fetch(REVIEWS_URL).then(r => r.json()).then(d => setDbReviews(d.reviews || [])).catch(() => {});
+  }, []);
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    const res = await fetch(REVIEWS_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, text, stars }) });
+    if (res.ok) {
+      setStatus("success");
+      setName(""); setText(""); setStars(5);
+    } else { setStatus("error"); }
+  };
+
+  return (
+    <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      {dbReviews.length > 0 && (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 32 }}>
+          {dbReviews.map(r => (
+            <div key={r.id} style={{ background: "white", borderRadius: 18, padding: "24px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid rgba(0,0,0,0.06)", display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ display: "flex", gap: 2 }}>{"⭐".repeat(r.stars)}</div>
+              <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--dark)", margin: 0 }}>«{r.text}»</p>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
+                <span style={{ fontWeight: 600, fontSize: 13, color: "var(--dark)" }}>{r.name}</span>
+                <span style={{ fontSize: 12, color: "var(--gray)" }}>{r.date}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {status === "success" ? (
+        <div style={{ background: "#f0fdf4", border: "1px solid #86efac", borderRadius: 18, padding: "32px", textAlign: "center" }}>
+          <div style={{ fontSize: 40, marginBottom: 12 }}>🙏</div>
+          <h3 style={{ margin: 0, color: "var(--dark)" }}>Спасибо за отзыв!</h3>
+          <p style={{ color: "var(--gray)", marginTop: 8 }}>Он появится на сайте после проверки</p>
+        </div>
+      ) : (
+        <form onSubmit={submit} style={{ background: "white", borderRadius: 20, padding: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", border: "1px solid rgba(0,0,0,0.06)" }}>
+          <h3 style={{ margin: "0 0 24px", fontSize: 20, fontWeight: 700, color: "var(--dark)" }}>Оставить отзыв на сайте</h3>
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ display: "flex", gap: 6, marginBottom: 20 }}>
+              {[1,2,3,4,5].map(s => (
+                <button key={s} type="button"
+                  onClick={() => setStars(s)}
+                  onMouseEnter={() => setHover(s)}
+                  onMouseLeave={() => setHover(0)}
+                  style={{ background: "none", border: "none", fontSize: 32, cursor: "pointer", padding: 0, lineHeight: 1, opacity: s <= (hover || stars) ? 1 : 0.25, transition: "opacity 0.15s" }}>
+                  ⭐
+                </button>
+              ))}
+            </div>
+            <input
+              value={name} onChange={e => setName(e.target.value)} required
+              placeholder="Ваше имя" maxLength={100}
+              style={{ width: "100%", border: "1.5px solid #e5e7eb", borderRadius: 12, padding: "12px 16px", fontSize: 15, marginBottom: 12, outline: "none", boxSizing: "border-box" }}
+            />
+            <textarea
+              value={text} onChange={e => setText(e.target.value)} required
+              placeholder="Расскажите о своём опыте..." rows={4} maxLength={1000}
+              style={{ width: "100%", border: "1.5px solid #e5e7eb", borderRadius: 12, padding: "12px 16px", fontSize: 15, resize: "vertical", outline: "none", boxSizing: "border-box" }}
+            />
+          </div>
+          {status === "error" && <p style={{ color: "red", fontSize: 14, margin: "0 0 12px" }}>Произошла ошибка. Попробуйте ещё раз.</p>}
+          <button type="submit" disabled={status === "loading"}
+            style={{ background: "var(--primary)", color: "white", border: "none", borderRadius: 12, padding: "14px 32px", fontSize: 15, fontWeight: 600, cursor: "pointer", opacity: status === "loading" ? 0.7 : 1 }}>
+            {status === "loading" ? "Отправка..." : "Отправить отзыв"}
+          </button>
+        </form>
+      )}
     </div>
   );
 }
@@ -735,8 +818,11 @@ export default function Index() {
             />
           </div>
 
-          {/* Отзывы */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, maxWidth: 1100, margin: "0 auto" }}>
+          {/* Отзывы с сайта + форма */}
+          <ReviewForm />
+
+          {/* Статичные отзывы */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, maxWidth: 1100, margin: "40px auto 0" }}>
             {[
               { name: "Анна М.", text: "Сделали очки за 40 минут, качество отличное. Очень довольна результатом!", stars: 5, date: "2 дня назад" },
               { name: "Дмитрий К.", text: "Сломал оправу утром — к обеду уже ходил в починенных очках. Работают быстро и аккуратно.", stars: 5, date: "1 неделю назад" },
