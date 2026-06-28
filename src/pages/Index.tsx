@@ -476,7 +476,7 @@ export default function Index() {
             <div className="menu-card">
               <span className="menu-tag">Срочно</span>
               <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/d84de801-f02b-47c1-8ceb-184f8320f6ce.jpg"
+                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/0f83a720-ab77-4f71-9fb8-2d9f2c6168e7.png"
                 alt="Ремонт оправы"
               />
               <div className="menu-card-body">
