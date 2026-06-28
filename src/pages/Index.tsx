@@ -475,7 +475,7 @@ export default function Index() {
                     marginBottom: "10px",
                   }}
                 >
-                  <h3>Ремонт оправ любой сложности</h3>
+                  <h3>Ремонт оправ</h3>
                   <span className="price">от 500 ₽</span>
                 </div>
                 <p style={{ fontSize: "14px", color: "#666" }}>
