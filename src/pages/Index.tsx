@@ -644,6 +644,28 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ПОЧЕМУ МЫ */}
+        <section className="section-padding" style={{ background: "var(--primary)", borderRadius: 24, margin: "12px 0" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <h2 className="section-title" style={{ color: "white", textAlign: "center", marginBottom: 36 }}>Почему выбирают нас</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
+              {[
+                "Срочное изготовление от 30 минут",
+                "Современное профессиональное оборудование",
+                "Работаем с премиальными линзами",
+                "Ремонт любой сложности",
+                "Более 10 лет опыта",
+                "Гарантия качества на все работы",
+              ].map(item => (
+                <div key={item} style={{ display: "flex", alignItems: "center", gap: 12, background: "rgba(255,255,255,0.1)", borderRadius: 12, padding: "14px 18px" }}>
+                  <span style={{ color: "var(--accent)", fontWeight: 700, fontSize: 20, flexShrink: 0 }}>✓</span>
+                  <span style={{ color: "white", fontSize: 15, fontWeight: 500 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ЦЕНЫ */}
         <section id="prices" className="section-padding" style={{ background: "white", borderRadius: 24, margin: "12px 0" }}>
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: 12 }}>Цены</h2>
