@@ -431,12 +431,7 @@ export default function Index() {
               <br />
               ЗА ЧАС
             </div>
-            <div className="floating-tag hidden md:block" style={{ top: "20%", left: "10%" }}>
-              #ЯКУТСК
-            </div>
-            <div className="floating-tag hidden md:block" style={{ bottom: "30%", right: "20%" }}>
-              ГАРАНТИЯ
-            </div>
+
           </div>
         </section>
 
