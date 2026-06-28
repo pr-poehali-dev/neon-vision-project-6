@@ -805,18 +805,7 @@ export default function Index() {
             </a>
           </div>
 
-          {/* Виджет 2ГИС */}
-          <div style={{ maxWidth: 1100, margin: "0 auto 40px", borderRadius: 20, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.1)" }}>
-            <iframe
-              src="https://widgets.2gis.com/widget?type=firm&id=70000001110511104&locale=ru_RU&zoom=16&width=100%25&height=400&controls=full"
-              width="100%"
-              height="400"
-              frameBorder="0"
-              style={{ display: "block" }}
-              title="Очки Плюс на 2ГИС"
-              allowFullScreen
-            />
-          </div>
+
 
           {/* Отзывы с сайта + форма */}
           <ReviewForm />
