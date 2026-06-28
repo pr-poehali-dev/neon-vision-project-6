@@ -698,7 +698,44 @@ export default function Index() {
         {/* ОТЗЫВЫ */}
         <section className="section-padding">
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: 8 }}>Отзывы клиентов</h2>
-          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Более 500 довольных клиентов в Якутске</p>
+          <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 32, fontSize: 16 }}>Более 500 довольных клиентов в Якутске</p>
+
+          {/* Кнопка 2ГИС */}
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: 40 }}>
+            <a
+              href="https://2gis.ru/yakutsk/geo/70000001110511104/tab/reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 10,
+                background: "#1BA136", color: "white",
+                borderRadius: 14, padding: "14px 28px",
+                fontWeight: 600, fontSize: 15, textDecoration: "none",
+                boxShadow: "0 4px 16px rgba(27,161,54,0.3)",
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(27,161,54,0.4)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(27,161,54,0.3)"; }}
+            >
+              <svg width="22" height="22" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="white"/><text x="18" y="24" textAnchor="middle" fontSize="18" fontWeight="bold" fill="#1BA136">2</text></svg>
+              Оставить отзыв на 2ГИС
+            </a>
+          </div>
+
+          {/* Виджет 2ГИС */}
+          <div style={{ maxWidth: 1100, margin: "0 auto 40px", borderRadius: 20, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.1)" }}>
+            <iframe
+              src="https://widgets.2gis.com/widget?type=firm&id=70000001110511104&locale=ru_RU&zoom=16&width=100%25&height=400&controls=full"
+              width="100%"
+              height="400"
+              frameBorder="0"
+              style={{ display: "block" }}
+              title="Очки Плюс на 2ГИС"
+              allowFullScreen
+            />
+          </div>
+
+          {/* Отзывы */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, maxWidth: 1100, margin: "0 auto" }}>
             {[
               { name: "Анна М.", text: "Сделали очки за 40 минут, качество отличное. Очень довольна результатом!", stars: 5, date: "2 дня назад" },
