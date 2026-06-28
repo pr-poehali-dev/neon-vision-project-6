@@ -107,9 +107,9 @@ export default function Moscow() {
         {/* ПОЧЕМУ МЫ */}
         <section className="retro-vibe">
           <div>
-            <h2 className="vibe-title">Качество якутской мастерской — в Москве.</h2>
+            <h2 className="vibe-title">Профессиональное изготовление очков — теперь ближе.</h2>
             <p className="vibe-text">
-              За 10 лет работы в Якутске мы отточили каждый процесс. Теперь открываем филиал в Москве — с тем же оборудованием, теми же стандартами и той же скоростью.
+              За годы работы мы выстроили безупречную систему производства. Современное оборудование, высокие стандарты качества и быстрые сроки — теперь доступны в новой мастерской.
             </p>
             <a href="#contacts" target="_blank" rel="noreferrer" className="btn-cta" style={{ background: "white", color: "var(--primary)", display: "inline-block" }}>
               Написать в Telegram
