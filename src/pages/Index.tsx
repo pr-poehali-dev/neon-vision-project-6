@@ -503,7 +503,7 @@ export default function Index() {
                 Точность
               </span>
               <img
-                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/5f1d99da-f588-4d48-9de5-2edcc11beccd.jpg"
+                src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/e7e62ffa-13aa-4eac-af86-4a5be2c361bc.png"
                 alt="Замена линз"
               />
               <div className="menu-card-body">
