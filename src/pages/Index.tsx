@@ -656,6 +656,7 @@ export default function Index() {
                 "Ремонт любой сложности",
                 "Более 10 лет опыта",
                 "Гарантия качества на все работы",
+                "Линзы в наличии и на заказ",
               ].map(item => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 12, background: "rgba(255,255,255,0.1)", borderRadius: 12, padding: "14px 18px" }}>
                   <span style={{ color: "var(--accent)", fontWeight: 700, fontSize: 20, flexShrink: 0 }}>✓</span>
