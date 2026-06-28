@@ -581,7 +581,6 @@ export default function Index() {
                 "Установка линз в оправу клиента",
                 "Ремонт оправ любой сложности",
                 "Детские линзы против миопии",
-                "Профессиональная диагностика и сервис",
               ].map(item => (
                 <li key={item} style={{ color: "rgba(255,255,255,0.9)", fontSize: 15, display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ color: "var(--accent)", fontSize: 18 }}>◆</span> {item}
