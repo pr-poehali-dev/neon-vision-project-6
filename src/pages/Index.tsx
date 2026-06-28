@@ -599,6 +599,8 @@ export default function Index() {
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/16503f70-e163-4a92-952c-7ef8c8981b78.png", alt: "Работа мастерской" },
 
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/bb5b7a93-5da1-43fb-897d-a179c3537fa7.png", alt: "Линзы Zeus и Rodenstock" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/79857244-cb12-413c-ad70-f69d614ecc07.png", alt: "Ремонт оправы плоскогубцами" },
+              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/10ec3194-7466-48eb-962a-1280937a91d7.png", alt: "Замена линз в оправе" },
 
             ].map((img, i) => (
               <div key={i} style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", aspectRatio: "4/3" }}>
