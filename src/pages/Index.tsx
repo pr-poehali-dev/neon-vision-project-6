@@ -759,7 +759,7 @@ export default function Index() {
           <p style={{ textAlign: "center", color: "var(--gray)", marginBottom: 48, fontSize: 16 }}>Профессиональное оборудование и опытные мастера</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, maxWidth: 960, margin: "0 auto 48px" }}>
             {[
-              { icon: "🔧", title: "10+ лет опыта", desc: "Работаем с 2013 года, тысячи довольных клиентов" },
+              { icon: "🔧", title: "10+ лет опыта", desc: "Работаем с 2015 года, тысячи довольных клиентов" },
               { icon: "⚡", title: "Ремонт за час", desc: "Большинство работ выполняем прямо при вас" },
               { icon: "🔬", title: "Проф. оборудование", desc: "Современное оборудование для точной работы с линзами" },
               { icon: "✅", title: "Гарантия на работу", desc: "Даём гарантию на каждую выполненную работу" },
