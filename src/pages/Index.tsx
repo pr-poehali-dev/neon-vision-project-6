@@ -276,7 +276,7 @@ function FloatingActions() {
     { icon: "📍", label: "Маршрут", href: "https://2gis.ru/yakutsk/search/Очки Плюс" },
   ];
   return (
-    <div style={{ position: "fixed", right: 20, bottom: 32, zIndex: 9999, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 10 }}>
+    <div style={{ position: "fixed", right: 20, bottom: 80, zIndex: 9999, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 10 }}>
       {expanded && actions.map(a => (
         <a
           key={a.label}
