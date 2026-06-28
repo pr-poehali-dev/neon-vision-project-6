@@ -597,8 +597,7 @@ export default function Index() {
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/2675f085-318e-4ad7-995a-b9da2b08347a.jpeg", alt: "Очки на заказ" },
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/dd35a0e4-d54b-417e-a21a-d8948f6f98b8.png", alt: "Работа мастерской" },
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/16503f70-e163-4a92-952c-7ef8c8981b78.png", alt: "Работа мастерской" },
-              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/23c21043-ca62-429b-a944-4c1d416df996.jpg", alt: "Работа мастерской" },
-              { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/files/1bfaf060-2d73-4d24-ade0-628d06b0ab27.jpg", alt: "Работа мастерской" },
+
               { src: "https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/bb5b7a93-5da1-43fb-897d-a179c3537fa7.png", alt: "Линзы Zeus и Rodenstock" },
 
             ].map((img, i) => (
