@@ -461,7 +461,7 @@ export default function Index() {
           <div className="menu-grid">
             {/* Item 1 */}
             <div className="menu-card">
-              <span className="menu-tag">Срочно</span>
+
               <img
                 src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/0f83a720-ab77-4f71-9fb8-2d9f2c6168e7.png"
                 alt="Ремонт оправы"
@@ -486,9 +486,7 @@ export default function Index() {
 
             {/* Item 2 */}
             <div className="menu-card">
-              <span className="menu-tag" style={{ background: "var(--secondary)" }}>
-                Точность
-              </span>
+
               <img
                 src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/e7e62ffa-13aa-4eac-af86-4a5be2c361bc.png"
                 alt="Замена линз"
@@ -513,9 +511,7 @@ export default function Index() {
 
             {/* Item 3 */}
             <div className="menu-card">
-              <span className="menu-tag" style={{ background: "var(--accent)", color: "var(--dark)" }}>
-                Под ключ
-              </span>
+
               <img
                 src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/af9ba643-2227-47b0-bb26-237babb13582.png"
                 alt="Очки на заказ"
