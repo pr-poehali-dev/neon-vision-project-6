@@ -389,9 +389,7 @@ export default function Index() {
   return (
     <>
       <header className="header">
-        <div className="logo">
-          <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/7408d642-0fb9-4509-a64c-3818ee5c82b9.png" alt="Очки Плюс" style={{ height: 36, width: "auto", display: "block" }} />
-        </div>
+        <div className="logo">Очки Плюс</div>
         <nav>
           <a href="#services" onClick={e => { e.preventDefault(); document.getElementById("services")?.scrollIntoView({ behavior: "smooth" }); }}>Услуги</a>
           <a href="#about" onClick={e => { e.preventDefault(); document.getElementById("about")?.scrollIntoView({ behavior: "smooth" }); }}>О нас</a>
