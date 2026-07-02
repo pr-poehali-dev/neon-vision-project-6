@@ -6,7 +6,7 @@ export default function Moscow() {
     <>
       <header className="header">
         <div className="logo">
-          <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/1074aa46-e501-49ec-99d8-bfd5921657e6.png" alt="Очки Плюс" style={{ height: 56, width: "auto", display: "block" }} />
+          <img src="https://cdn.poehali.dev/projects/437a93b1-5f82-4463-b584-1d03eba1ecc3/bucket/1074aa46-e501-49ec-99d8-bfd5921657e6.png" alt="Очки Плюс" style={{ height: 72, width: "auto", display: "block" }} />
         </div>
         <nav>
           <a href="/">Главная</a>
